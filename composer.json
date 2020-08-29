@@ -1,0 +1,12 @@
+{
+    "name": "giorgiomannarini/my_website",
+    "authors": [
+        {
+            "name": "giorgiomannarini",
+            "email": "giorgio.mannarini@gmail.com"
+        }
+    ],
+    "require": {
+        "phpmailer/phpmailer": "^6.1"
+    }
+}
