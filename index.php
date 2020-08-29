@@ -199,7 +199,7 @@
     <!-- UPDATE WITH YOUR DOMAIN MAIL -->
     <a href="mailto:giorgio.mannarini@epfl.ch" class="google" target="_blank"><i class="fa fa-envelope"></i></a>
   </div>
-  <footer>
+  <footer class="icon-bar-mobile">
     <a href="https://www.linkedin.com/in/giorgio-mannarini-aa04a778" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/GiorgioMannarini" class="github" target="_blank"><i class="fab fa-github"></i></a>
     <a href="https://www.facebook.com/giorgio.mannarini" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
