@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Index</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css" />
+    <link rel="stylesheet" href="bg/style.css" />
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+      }
+      .wrapper {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        /* background-image: url("https://wallpaperaccess.com/full/366398.jpg");
+        background-repeat: no-repeat;
+        background-size: 100% 100%; */
+      }
+      .progress-container {
+        position: fixed;
+        height: 100%;
+        width: 8px;
+        z-index: 1;
+        right: 0;
+      }
+      .progress-bar {
+        height: 0%;
+        background: #fff;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 8px;
+      }
+      .bowl {
+        height: 60%;
+        color: black;
+      }
+
+      .absolute-left {
+        position: absolute;
+        left: 0;
+        width: 40%;
+
+        border-radius: 30% 10%;
+      }
+
+      .absolute-right {
+        position: absolute;
+        right: 0;
+        z-index: -1;
+
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+      }
+      .text {
+        background-color: #f5e2c8;
+      }
+
+      .img {
+        width: 78%;
+        /* background-image: url('./img/home.svg'); */
+
+        border-radius: 10% 30%;
+
+        -webkit-transition: all 0.5s ease;
+        -moz-transition: all 0.5s ease;
+        -o-transition: all 0.5s ease;
+        -ms-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        /* transform: scaleX(-1); */
+      }
+
+      .img-1 {
+        background-color: #91C48F;
+        color: white;
+      }
+      .img-2 {
+        background-color: #91C48F;
+        color: white;
+      }
+      .img-3 {
+        background-color: #91C48F;
+        color: white;
+      }
+      .img-4 {
+        background-color: #91C48F;
+        color: white;
+      }
+      /* .animation-delay-200 {
+        -webkit-animation-delay: 0.5s;
+        animation-delay: 0.5s;
+      } */
+
+      :root {
+        --animate-duration: 300ms;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      /* Medium devices (tablets, less than 992px) */
+      @media (max-width: 991.98px) {
+        .progress-container,
+        .progress-bar {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="c"></canvas>
+    <div class="wrapper">
+      <div class="progress-container">
+        <div class="progress-bar" id="myBar"></div>
+      </div>
+      <div
+        class="row align-items-center justify-content-center h-100"
+        id="page-1"
+      >
+        <div class="col-lg-8 text-center bowl">
+          <div
+            class="row align-items-center justify-content-center h-100 w-100"
+          >
+            <div class="col d-flex align-items-center h-50 absolute-left text">
+              <div class="text-center w-100">
+                <h1>Hi!</h1>
+
+                <h4>
+                  I'm Giorgio Mannarini.
+                </h4>
+              </div>
+            </div>
+            <div class="col h-100 absolute-right img img-1">
+              <h1>PROVA 1</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row align-items-center justify-content-center h-100"
+        id="page-2"
+      >
+        <div class="col-lg-8 text-center bowl">
+          <div
+            class="row align-items-center justify-content-center h-100 w-100"
+          >
+            <div class="col d-flex align-items-center h-50 absolute-left  text">
+              <div class="text-center w-100">
+                <h1>Hi!</h1>
+                <h4>
+                  I'm Giorgio Mannarini. PART 2.
+                </h4>
+              </div>
+            </div>
+            <div class="col h-100 absolute-right img img-2">
+              <h1>PROVA 2</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row align-items-center justify-content-center h-100"
+        id="page-3"
+      >
+        <div class="col-lg-8 text-center bowl">
+          <div
+            class="row align-items-center justify-content-center h-100 w-100"
+          >
+            <div class="col d-flex align-items-center h-50 absolute-left text">
+              <div class="text-center w-100">
+                <h1>Hi!</h1>
+                <h4>
+                  I'm Giorgio Mannarini. PART 3.
+                </h4>
+              </div>
+            </div>
+            <div class="col h-100 absolute-right img img-3">
+              <h1>PROVA 3</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="row align-items-center justify-content-center h-100"
+        id="page-4"
+      >
+        <div class="col-lg-8 text-center bowl">
+          <div
+            class="row align-items-center justify-content-center h-100 w-100"
+          >
+            <div class="col d-flex align-items-center h-50 absolute-left text">
+              <div class="text-center w-100">
+                <h1>Hi!</h1>
+                <h4>
+                  I'm Giorgio Mannarini. PART 4
+                </h4>
+              </div>
+            </div>
+            <div class="col h-100 absolute-right img img-4">
+              <h1>PROVA 4</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="node_modules/jquery/dist/jquery.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/bootstrap/dist/js/bootstrap.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="node_modules/jquery.scrollto/jquery.scrollTo.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/animejs/1.0.0/anime.min.js"
+    ></script>
+    <script type="text/javascript" src="bg/script.js"></script>
+    <script
+      type="text/javascript"
+      src="http://code.jquery.com/color/jquery.color-2.1.2.min.js"
+    ></script>
+
+    <script type="text/javascript">
+      $(function () {
+        var scroll = 0
+        var maxScroll = 6000
+        var pages = ['#page-1', '#page-2', '#page-3', '#page-4']
+        var texts = ['#div-text-1', '#div-text-2', '#div-text-3', '#div-text-4']
+        var currentScroll = 0
+        var currentIndex = 0
+        //MOBILE
+        var startingY = 0
+        var endingY = 0
+        var mobilePerc = 0
+        var deltaScroll = 100 / pages.length
+
+        var i = 0
+
+        // Because of d-flex (jQuery function cannot be used)
+        const hide = element => {
+          $(element).addClass('hidden')
+        }
+        const show = element => {
+          $(element).removeClass('hidden')
+        }
+
+        var changeDivColor = selector => {
+          $(selector).css({ 'background-color': divColors[index] })
+        }
+
+        for (i = 1; i < pages.length; i++) {
+          hide(`${pages[i]} .text`)
+          hide(`${pages[i]} .img`)
+          hide(pages[i])
+        }
+
+        const animateCSS = (
+          selector,
+          animation,
+          nextIndex = null,
+          prefix = 'animate__'
+        ) =>
+          new Promise((resolve, reject) => {
+            //const element = $(selector);
+            const animationName = `${prefix}${animation}`
+            const node = $(selector)
+
+            node.addClass(`${prefix}animated`).addClass(animationName)
+
+            function handleAnimationEnd () {
+              node.removeClass(`${prefix}animated`).removeClass(animationName)
+              node.off('animationend')
+
+              resolve({ selector, nextIndex })
+            }
+
+            node.on('animationend', handleAnimationEnd)
+          })
+
+        $(window).on('mousewheel', function (e) {
+          scroll = -e.originalEvent.wheelDelta
+
+          currentScroll += (scroll / maxScroll) * 100
+          currentScroll = currentScroll < 0 ? 0 : currentScroll
+          currentScroll = currentScroll > 100 ? 100 : currentScroll
+          changePage(currentScroll)
+        })
+        $(window).on('touchstart', function (e) {
+          startingY = e.changedTouches[0].pageY
+        })
+        $(window).on('touchend', function (e) {
+          endingY = e.changedTouches[0].pageY
+
+          mobilePerc =
+            endingY - startingY > 0
+              ? mobilePerc - deltaScroll
+              : mobilePerc + deltaScroll
+          mobilePerc = mobilePerc < 0 ? 0 : mobilePerc
+          mobilePerc = mobilePerc > 100 ? 100 : mobilePerc
+
+          changePage(mobilePerc)
+        })
+
+        setTimeout(function(){
+          changeDivColor(`${pages[0]} .img`)
+        }, 500)
+
+        const changePage = currentScroll => {
+          $('#myBar').css({
+            height: currentScroll + '%'
+          })
+          var index = Math.floor((currentScroll * pages.length) / 100) //where I am
+          index = index < pages.length ? index : index - 1 //to cycle trough the pages vector
+
+          if (index !== currentIndex) {
+            //If I am in another page
+
+            animateCSS(pages[currentIndex], 'fadeOut', index).then(
+              ({ selector, nextIndex }) => {
+                var currentText = selector + ' .text'
+                var currentImg = selector + ' .img'
+
+                hide(currentText)
+                hide(currentImg)
+                hide(selector)
+                $(currentImg).css({
+                  'background-color': '#91C48F'
+                })
+                show(pages[nextIndex])
+
+                var nextText = pages[nextIndex] + ' .text'
+
+                show(nextText)
+                animateCSS(nextText, 'zoomIn', nextIndex).then(
+                  ({ selector, nextIndex }) => {
+                    var nextImg = pages[nextIndex] + ' .img'
+
+                    show(nextImg)
+                    animateCSS(nextImg, 'zoomIn', nextIndex).then(
+                      ({ selector, nextIndex }) => {
+                        fauxClick(cW * Math.random(), cH * Math.random())
+                        changeDivColor(nextImg);
+                      }
+                    )
+                  }
+                )
+              }
+            )
+
+            currentIndex = index
+          }
+        }
+      })
+    </script>
+  </body>
+</html>
