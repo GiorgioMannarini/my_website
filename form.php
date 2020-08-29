@@ -42,7 +42,7 @@ if (!empty($_POST)) {
         $mail->Port       = 587;
         $mail->Host       = "smtp.gmail.com";
         $mail->Username   = "giorgio.mannarini@gmail.com";
-        $mail->Password   = "YOU TRIED!!!";
+        $mail->Password   = "You tried!";
 
         $mail->setFrom($email, 'My Website');
         $mail->Subject = 'New message from your website';

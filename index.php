@@ -39,14 +39,7 @@
     </div>
   </nav>
 
-  <!-- SOCIAL SIDEBAR -->
-  <div class="icon-bar">
-    <a href="https://www.linkedin.com/in/giorgio-mannarini-aa04a778" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/GiorgioMannarini" class="github" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.facebook.com/giorgio.mannarini" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
-    <!-- UPDATE WITH YOUR DOMAIN MAIL -->
-    <a href="mailto:giorgio.mannarini@epfl.ch" class="google" target="_blank"><i class="fa fa-envelope"></i></a>
-  </div>
+
   <div class="pages page-1">
     <div class="d-flex w-100 h-50 align-items-center">
       <div class="w-100 text-white text-center">
@@ -166,16 +159,17 @@
             <div class="form-group">
               <label for="emailadd">Email address</label>
               <input type="email" class="form-control <?= $email_error ? 'is-invalid' : '' ?>" id="emailadd" name="email_address" aria-describedby="emailHelp" placeholder="Enter email" />
-              <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else.</small>
               <?php
               if ($email_error) {
               ?>
                 <small class="text-danger">
-                  <?=$_GET['email_error']; ?>
+                  <?= $_GET['email_error']; ?>
                 </small>
               <?php
               }
               ?>
+              <small id="emailHelp" class="form-text text-muted">I'll never share your email with anyone else.</small>
+
             </div>
             <div class="form-group">
               <label for="message">Message</label>
@@ -184,7 +178,7 @@
               if ($message_error) {
               ?>
                 <small class="text-danger">
-                  <?=$_GET['message_error']; ?>
+                  <?= $_GET['message_error']; ?>
                 </small>
               <?php
               }
@@ -196,17 +190,34 @@
         <!-- END FORM -->
       </div>
     </div>
+  </div>
+  <!-- SOCIAL SIDEBAR -->
+  <div class="icon-bar">
+    <a href="https://www.linkedin.com/in/giorgio-mannarini-aa04a778" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/GiorgioMannarini" class="github" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.facebook.com/giorgio.mannarini" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    <!-- UPDATE WITH YOUR DOMAIN MAIL -->
+    <a href="mailto:giorgio.mannarini@epfl.ch" class="google" target="_blank"><i class="fa fa-envelope"></i></a>
+  </div>
+  <footer>
+    <a href="https://www.linkedin.com/in/giorgio-mannarini-aa04a778" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/GiorgioMannarini" class="github" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="https://www.facebook.com/giorgio.mannarini" class="facebook" target="_blank"><i class="fab fa-facebook"></i></a>
+    <!-- UPDATE WITH YOUR DOMAIN MAIL -->
+    <a href="mailto:giorgio.mannarini@epfl.ch" class="google" target="_blank"><i class="fa fa-envelope"></i></a>
+    
+  </footer>
 
 
 
 
 
-    <!-- INCLUDED SCRIPTS -->
-    <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- MY SCRIPTS -->
-    <script type="text/javascript" src="./script.js">
-    </script>
+  <!-- INCLUDED SCRIPTS -->
+  <script type="text/javascript" src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script type="text/javascript" src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <!-- MY SCRIPTS -->
+  <script type="text/javascript" src="./script.js">
+  </script>
 </body>
 
 </html>
