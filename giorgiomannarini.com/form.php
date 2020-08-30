@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 
         // specify SMTP credentials
         $mail->isSMTP();
-        $mail->SMTPDebug  = 1;
+        $mail->SMTPDebug  = 0;
         $mail->SMTPAuth   = TRUE;
         $mail->SMTPSecure = "tls";
         $mail->Port       = 587;
