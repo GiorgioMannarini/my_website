@@ -13,28 +13,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
+  
 </head>
 
 <body>
   <!-- NAVBAR -->
   <nav class="navbar dark-blue-color fixed-top navbar-expand-lg navbar-dark">
     <div class="container">
-      <a class="navbar-brand text-white lato-font" href="#">
-        Brand
-      </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="nav navbar-nav navbar-right">
           <li class="nav-item">
-            <a class="nav-link text-white navbar-font" href="#about-me">About me</a>
+            <a class="nav-link text-white navbar-font smoothScroll" href="#about-me">About me</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white navbar-font" href="#projects">Projects</a>
+            <a class="nav-link text-white navbar-font smoothScroll" href="#projects">Projects</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white navbar-font" href="#contacts">Message me</a>
+            <a class="nav-link text-white navbar-font smoothScroll" href="#contacts">Message me</a>
           </li>
         </ul>
       </div>

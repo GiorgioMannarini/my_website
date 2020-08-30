@@ -1,6 +1,6 @@
 $(function () {
-  $('body', 'html').css('overflow', 'hidden')
- // GLOBAL VARIABLES
+  $('body', 'html').css('overflow', 'hidden');
+  // GLOBAL VARIABLES
   var scrolledUp = false
   var cardsClosed = true
   // Mobile first scrolling
@@ -10,7 +10,7 @@ $(function () {
 
   // FUNCTIONS
   const animateDivTop = selector => {
-    $(selector).animate({ top: '-100%' }, 500, function () {
+    $(selector).animate({ top: '-100%' }, 700, function () {
       $('body').css('overflow', 'auto')
     })
   }
@@ -55,6 +55,16 @@ $(function () {
       }
     }
   })
+  // Smooth scrolling
+  // $("a[href^='#']").click(function(e) {
+  // 	//e.preventDefault();
+
+  // 	var position = $($(this).attr("href")).offset().top;
+
+  // 	$("body, html").animate({
+  // 		scrollTop: position
+  // 	} /* speed */ );
+  // });
 
   //First page animation
   $(window).on('wheel', function (e) {
