@@ -55,7 +55,6 @@ if (!empty($_POST)) {
         $body = join('<br />', $bodyParagraphs);
         $mail->Body = $body;
 
-        echo $body;
         if ($mail->send()) {
 
             header('Location: ./index.php?confirm#contacts'); // redirect to 'thank you' page
