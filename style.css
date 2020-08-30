@@ -5,6 +5,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow: hidden;
+  
 }
 .pages {
   height: 100%;
@@ -238,7 +239,15 @@ textarea {
   }
  
 }
+
+@media(min-width:451px) {
+
+}
+
 @media (max-width: 450px) {
+  html, body {
+    overflow: visible;
+  }
   .div-card-form {
     height: 67rem !important;
   }

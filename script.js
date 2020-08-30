@@ -1,5 +1,6 @@
 $(function () {
-  // GLOBAL VARIABLES
+  $('body', 'html').css('overflow', 'hidden')
+ // GLOBAL VARIABLES
   var scrolledUp = false
   var cardsClosed = true
   // Mobile first scrolling
@@ -40,10 +41,9 @@ $(function () {
   }
   const startCardAnimation = () => {
     cardsClosed = !cardsClosed
-    setTimeout(function () {
-      $('.cards').toggleClass('transition')
-      $('#projects').addClass('div-card-form')
-    }, 700)
+
+    $('.cards').toggleClass('transition')
+    $('#projects').addClass('div-card-form')
   }
 
   // EVENTS
@@ -55,6 +55,7 @@ $(function () {
       }
     }
   })
+
   //First page animation
   $(window).on('wheel', function (e) {
     var scroll = -e.originalEvent.wheelDelta
@@ -71,6 +72,7 @@ $(function () {
       startCardAnimation()
     }
   })
+
   $(window).on('touchstart', function (e) {
     startingY = e.changedTouches[0].pageY
   })
@@ -88,8 +90,7 @@ $(function () {
     }
   })
 
- 
   if (window.location.href.indexOf('#') > 0) {
     scrollFirstUp()
-}
+  }
 })

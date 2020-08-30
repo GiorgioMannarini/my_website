@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
   <title>Home</title>
-
+  <link rel="icon" 
+      type="image/jpg" 
+      href="./bg/present-photo.jpg">
   <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="node_modules/@fortawesome/fontawesome-free/css/all.min.css" />
@@ -56,7 +58,7 @@
     </div>
   </div>
 
-  <div class="w-100 pt-5 mt-5 position-relative">
+  <div class="w-100 pt-5 mt-5 position-relative cont">
     <div class="row w-100 pages page-2 justify-content-center align-items-center">
       <div class="col-md-6 mx-5 text-center justify-content-center">
         <div class="present-photo-container" id="about-me"></div>
@@ -93,7 +95,7 @@
             </li>
             <li class="cardp card-2">
               <div class="h-100 card">
-                <img class="card-img-top" src="./bg/card-1.jpg" alt="Card image cap" />
+                <img class="card-img-top" src="./bg/card-2.jpg" alt="Card image cap" />
                 <div class="h-100 card-body d-flex align-items-center">
                   <div class="w-100 card-body-content">
                     <h5 class="card-title lato-font">Stùdiolo</h5>
@@ -199,6 +201,8 @@
     <!-- UPDATE WITH YOUR DOMAIN MAIL -->
     <a href="mailto:giorgio.mannarini@epfl.ch" class="google" target="_blank"><i class="fa fa-envelope"></i></a>
   </div>
+
+  <!-- TODO: PHP FOR THE ELEMENTS -->
   <footer class="icon-bar-mobile">
     <a href="https://www.linkedin.com/in/giorgio-mannarini-aa04a778" class="linkedin" target="_blank"><i class="fab fa-linkedin"></i></a>
     <a href="https://github.com/GiorgioMannarini" class="github" target="_blank"><i class="fab fa-github"></i></a>
