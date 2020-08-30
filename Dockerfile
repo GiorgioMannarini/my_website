@@ -53,7 +53,11 @@ COPY --chown=www:www . /var/www
 USER www
 
 # NPM e Composer install
-RUN cd /var/www/giorgiomannarini.com && npm install && composer install
+WORKDIR /var/www/giorgiomannarini.com
+RUN npm install
+RUN composer install
+
+WORKDIR /var/www
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
