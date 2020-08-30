@@ -49,11 +49,11 @@ COPY . /var/www
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
 
-# NPM e Composer install
-RUN cd /var/www/giorgiomannarini.com && npm install && composer install
-
 # Change current user to www
 USER www
+
+# NPM e Composer install
+RUN cd /var/www/giorgiomannarini.com && npm install && composer install
 
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
