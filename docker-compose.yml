@@ -10,8 +10,7 @@ services:
     restart: unless-stopped
     tty: true
     environment:
-      SERVICE_NAME: app
-      SERVICE_TAGS: dev
+      - GMAIL_PWD
     working_dir: /var/www
     volumes:
       - ./:/var/www
