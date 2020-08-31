@@ -15,6 +15,8 @@ services:
     working_dir: /var/www
     volumes:
       - ./:/var/www
+      - /var/www/giorgiomannarini.com/node_modules
+      - /var/www/giorgiomannarini.com/vendor
       - ./docker-conf/php/local.ini:/usr/local/etc/php/conf.d/local.ini
     networks:
       - app-network
@@ -30,7 +32,8 @@ services:
       - "443:443"
     volumes:
       - ./:/var/www
-      - ./docker-conf/nginx/conf.d/:/etc/nginx/conf.d/
+      # - ./docker-conf/nginx/conf.d/:/etc/nginx/conf.d/
+      - ./docker-conf/remote/conf.d/:/etc/nginx/conf.d/
       - /etc/letsencrypt/:/etc/letsencrypt/
       - /etc/ssl/:/etc/ssl/
     networks:
