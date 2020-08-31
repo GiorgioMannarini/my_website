@@ -1,5 +1,0 @@
-/vendor/
-/node_modules/
-/package-lock.json
-/docker-conf/nginx/dev/
-/docker-compose-dev.yml

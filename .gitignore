@@ -1,0 +1,5 @@
+/giorgiomannarini.com/vendor/
+/giorgiomannarini.com/node_modules/
+/giorgiomannarini.com/package-lock.json
+/docker-conf/nginx/dev/
+/docker-compose-dev.yml
