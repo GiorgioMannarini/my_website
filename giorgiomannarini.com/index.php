@@ -75,6 +75,7 @@
           <!-- CARDS -->
           <ul class="cards pt-5 pb-5 mb-5">
             <li class="cardp card-1">
+              <a href="https://www.youtube.com/watch?v=p1TH_w6aYow" class="card-link">
               <div class="h-100 card">
                 <img class="card-img-top" src="./bg/card-1.jpg" alt="Card image cap" />
                 <div class="h-100 card-body d-flex align-items-center">
@@ -90,8 +91,11 @@
                   </div>
                 </div>
               </div>
+            </a>
+              
             </li>
             <li class="cardp card-2">
+              <a href="#" class="card-link">
               <div class="h-100 card">
                 <img class="card-img-top" src="./bg/card-2.jpg" alt="Card image cap" />
                 <div class="h-100 card-body d-flex align-items-center">
@@ -108,8 +112,11 @@
                   </div>
                 </div>
               </div>
+            </a>
+             
             </li>
             <li class="cardp card-3">
+              <a href="https://github.com/GiorgioMannarini/ListaDebiti" class="card-link">
               <div class="h-100 card">
                 <img class="card-img-top" src="./bg/card-3.png" alt="Card image cap" />
                 <div class="h-100 card-body d-flex align-items-center">
@@ -126,6 +133,8 @@
                   </div>
                 </div>
               </div>
+            </a>
+              
             </li>
           </ul>
           <!-- END CARDS -->

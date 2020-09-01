@@ -8,6 +8,13 @@ body {
   scroll-behavior: smooth;
   
 }
+
+.card-link {
+  color:inherit !important;
+  text-decoration: none !important;
+ }
+
+
 .pages {
   height: 100%;
   width: 100%;
@@ -133,6 +140,14 @@ body {
   -webkit-transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.12);
   transition: all 0.4s cubic-bezier(0.63, 0.15, 0.03, 1.12);
 }
+
+
+.cardp:hover{
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+ }
+
+
 .card-1 {
   z-index: 10;
   -webkit-transform: rotateZ(-2deg);
@@ -241,10 +256,6 @@ textarea {
  
 }
 
-@media(min-width:451px) {
-
-}
-
 @media (max-width: 450px) {
   html, body {
     overflow: visible;
@@ -253,7 +264,7 @@ textarea {
     height: 67rem !important;
   }
   .cards {
-    width: 12rem !important;
+    width: 15rem !important;
     height: 18.5rem !important;
   }
   ul.cards.transition .card-1 {
