@@ -4,9 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="Hi and welcome to my website! I am Giorgio, and I am a full stack developer based in Lausanne, Switzerland.">
    
-  <title>Home</title>
-  
+  <title>Giorgio Mannarini</title>
+
   <link rel="icon" 
       type="image/jpg" 
       href="./bg/present-photo.jpg">
