@@ -68,7 +68,7 @@
           My name is Giorgio. I am a full stack developer based in Lausanne,
           Switzerland. My passions are to develop beautiful websites and
           mobile applications. I have a Bachelor in Computer Science and I'm
-          also about to take a Master's Degree.
+          also about to receive a Master's Degree.
         </p>
         <div class="pt-5 text-center" id="projects">
           <h2 class="paragraph-title lato-font pb-3">
