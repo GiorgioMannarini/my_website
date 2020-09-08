@@ -65,7 +65,7 @@
         <hr />
         <h2 class="paragraph-title lato-font">Hi!</h2>
         <p class="p-3 lato-font">
-          My name is Giorgio. I am a full stack developer based in Lausanne,
+          My name is Giorgio. I am a full-stack developer based in Lausanne,
           Switzerland. My passions are to develop beautiful websites and
           mobile applications. I have a Bachelor in Computer Science and I'm
           also about to receive a Master's Degree.
@@ -97,7 +97,7 @@
               
             </li>
             <li class="cardp card-2">
-              <a href="#" class="card-link">
+              <a href="https://github.com/francesco98/studiolo-app" class="card-link">
               <div class="h-100 card">
                 <img class="card-img-top" src="./bg/card-2.jpg" alt="Card image cap" />
                 <div class="h-100 card-body d-flex align-items-center">
