@@ -378,6 +378,12 @@ section {
   color: #728394;
 }
 
+.subtitle{
+  font-weight: 700 !important;
+  font-size: 26px !important;
+  color: #728394 !important;
+}
+
 .about .content ul {
   list-style: none;
   padding: 0;
