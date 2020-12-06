@@ -384,16 +384,16 @@ section {
   color: #728394 !important;
 }
 
-.about .content ul {
+.about .content ul, .our-questions ul {
   list-style: none;
   padding: 0;
 }
 
-.about .content ul li {
+.about .content ul li, .our-questions ul li {
   padding-bottom: 10px;
 }
 
-.about .content ul i {
+.about .content ul i, .our-questions ul i {
   font-size: 20px;
   padding-right: 2px;
   color: #0563bb;
@@ -1181,4 +1181,21 @@ section {
 
 #footer .credits {
   font-size: 13px;
+}
+
+.table th, .table td{
+  vertical-align: middle !important;
+  border: 0 !important;
+ }
+.table thead {
+  background: #343a40;
+  color:  #F8F8F8;
+  border: 0;
+}
+
+table tr:nth-child(odd) td{
+  background:#fff;
+}
+table tr:nth-child(even) td{
+   background:#343a4010;
 }
