@@ -68,7 +68,7 @@
             >
           </li>
           <li>
-            <a href="#portfolio"
+            <a href="#first-question"
               ><i class="bx bx-book-content"></i> <span>Portfolio</span></a
             >
           </li>
@@ -652,8 +652,9 @@
         </div>
       </section>
       <!-- End Resume Section -->
+
       <!-- First question Section -->
-      <section id="portfolio" class="portfolio section-bg">
+      <section id="first-question" class="portfolio section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Question 1</h2>
@@ -738,7 +739,7 @@
                   <td>-4.973</td>
                 </tr>
                 <tr>
-                  <td scope="row"> Proportion of females 0-5 yrs</td>
+                  <td scope="row">Proportion of females 0-5 yrs</td>
                   <td>0.141 <i>(0.137)</i></td>
                   <td>0.007 <i>(0.005)</i></td>
                   <td>0.167</td>
@@ -760,10 +761,129 @@
                 </tr>
               </tbody>
             </table>
+            <p class="text-justify mt-5">
+              Our analysis shows that:
+            </p>
+            <div class="row our-questions text-justify mt-2">
+              <div class="col">
+                <ul>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    For the natality rate, we can't say that the program had an
+                    effect on the outcome variables, namely the number of male
+                    and female children born between 2000 and 2005. Indeed, only
+                    in the first model, when we consider as outcome the
+                    proportion of males born between 2000 and 2005 the p-value
+                    is lower than the common threshold (0.05), and the program
+                    seems to have had a negative effect on this proportion.
+                    Anyway, considering that the other two models contradict
+                    this result, and considering that, when looking at the
+                    proportion of females born between 2000 and 2005 the
+                    p-values are all higher than the threshold, and the reported
+                    effect is insignificant, we definetly cannot state that Piso
+                    Firme had an effect on these variables. It would be
+                    certainly interesting to see the long-term effects of the
+                    program in this sense on the treated households, but
+                    unfortunately this kind of data is unavailable.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    Talking about the household income and assets per capita in
+                    2005, first of all we notice that, for the control group,
+                    the standard deviation is huge. This suggests that these
+                    economical indicators have a huge variation across the
+                    families. Moreover, for the total household income per
+                    capita we notice an unexpected decrease for the treated
+                    group, but even in this case we can't state anything about
+                    Piso Firme effect, since the p-values are way higher than
+                    0.05. With respect to the households assets, we notice, this
+                    time, an increase for the treated group, which is expected,
+                    since the value of a house increases whith the replacement
+                    of the floor's material. However, even in this case, we are
+                    not in the position to state anything, because of the
+                    p-values.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="text-justify">
+              <b>Don't you notice something weird?</b> Why is the standard
+              deviation for the last two outcome variables so high in the
+              control group? Time for some plots!
+            </p>
           </div>
         </div>
       </section>
       <!-- End First question Section -->
+      <!-- Second question Section -->
+      <section id="second-question" class="portfolio section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>Question 2</h2>
+            <h3 class="subtitle text-center mb-5">
+              Using different models to analyse author's conclusions
+            </h3>
+            <p class="text-justify">
+              We reported in the result section what the authors achieved, but
+              we think there might be a lot more under the carpet that deserves
+              to be mentioned. To assess the author's result robustness we run
+              different and more complex models with respect to a simple linear
+              regression, using a tecnique called <i>SHAP values</i> to
+              interpret how much (on average) each regression variable
+              contributes to the outcome. So before we jump in the main part of
+              our analysis, let's describe what these SHAP values are!
+              Unfortunately there's going to be a little bit of math in this
+              part, but nothing too worrying. We will walk you thorugh an
+              example with a linear regression model on table 4 as, it is the
+              simplest model to grasp.
+            </p>
+            <p class="mt-5 text-left">
+              <small
+                ><b>Already know what SHAP values are?</b>
+                <a href="#portfolio"
+                  >Jump to the results of our analysis!</a
+                ></small
+              >
+            </p>
+            <p class="mt-5 text-justify">
+              For linear regression, the shap values of a prediction are
+              singular for each feature. Each SHAP value represents the
+              contribution of the related feature to the difference between the
+              expected value of the model and its prediction for that single
+              datapoint, i.e:
+            </p>
+            <p class="text-center mt-3">
+              $ f(x_{sample}) - E[f(X)] = \sum_{features} SHAP_{feature} $
+            </p>
+            <p class="text-justify mt-3">
+              For this small walkthrough, we will consider as outcome the
+              variable `S_shcementfloor` (Share of rooms with cement floors) and
+              as independent variables, the ones considered by the third model
+              in the 4th table of the paper. At first, let's plot the model
+              coefficients, for a simple Linear Regression (a.k.a. the feature
+              importance plot).
+            </p>
+            <div
+              class="mt-5 plotly-graph-div"
+              style="height: 70vh;"
+              id="linearCoeff"
+            ></div>
+            <h3 class="subtitle text-center mb-5 mt-5">
+              Mexican people are democratic, and love their children
+            </h3>
+            <p class="text-justify">
+              Before moving to more complex models, let's try to have some
+              better insights on the linear regression we made, using SHAP
+              values. We report, for each outcome variable of paper's table 4, a
+              plot containing the shap values of model's features. We are not
+              only interested in seeing whether the author's assumptions hold
+              under this new, more advanced, analysis, but also to discover new
+              interesting facts from the data.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Second question Section -->
 
       <!-- ======= Portfolio Section ======= -->
       <section id="portfolio" class="portfolio section-bg">
@@ -798,35 +918,12 @@
             data-aos="fade-up"
             data-aos-delay="200"
           >
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-1.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>App 1</h4>
-                  <p>App</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-1.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="App 1"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
+            <div class="col-lg-12 col-md-12 portfolio-item filter-app">
+              <div
+                class="plotly-graph-div"
+                style="height: 70vh;"
+                id="shapShcementLinear"
+              ></div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -845,68 +942,6 @@
                       data-gall="portfolioGallery"
                       class="venobox"
                       title="Web 3"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-3.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>App 2</h4>
-                  <p>App</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-3.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="App 2"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-4.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Card 2</h4>
-                  <p>Card</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-4.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="Card 2"
                       ><i class="bx bx-plus"></i
                     ></a>
                     <a
@@ -953,97 +988,12 @@
               </div>
             </div>
 
-            <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-6.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>App 3</h4>
-                  <p>App</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-6.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="App 3"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-7.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Card 1</h4>
-                  <p>Card</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-7.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="Card 1"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-8.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Card 3</h4>
-                  <p>Card</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-8.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="Card 3"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
+            <div class="col-lg-12 col-md-12 portfolio-item filter-card">
+              <div
+                class="plotly-graph-div"
+                style="height: 70vh;"
+                id="shapShcementLinear"
+              ></div>
             </div>
 
             <div class="col-lg-4 col-md-6 portfolio-item filter-web">
@@ -1535,5 +1485,71 @@
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+    <!-- Personal files -->
+
+    <script src="assets/js/plotlyjs-bundle.js"></script>
+    <script src="assets/js/lin-reg-coeff.js"></script>
+    <script src="assets/js/shap-shcement-linear.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script
+      id="MathJax-script"
+      async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
+    ></script>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [
+            ['$', '$'],
+            ['\\(', '\\)']
+          ]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      }
+      $(function () {
+        var plot = function (id) {
+          window.PLOTLYENV = { BASE_URL: 'https://plotly.com' }
+
+          var gd = document.getElementById(id)
+          var resizeDebounce = null
+
+          function resizePlot () {
+            var bb = gd.getBoundingClientRect()
+            Plotly.relayout(gd, {
+              width: bb.width,
+              height: bb.height
+            })
+          }
+
+          window.addEventListener('resize', function () {
+            if (resizeDebounce) {
+              window.clearTimeout(resizeDebounce)
+            }
+            resizeDebounce = window.setTimeout(resizePlot, 100)
+          })
+
+          Plotly.plot(gd, {
+            data: window[id].data,
+            layout: window[id].layout,
+            frames: window[id].frames
+          })
+        }
+        plot('linearCoeff')
+        plot('shapShcementLinear')
+
+        $('#portfolio-flters li').on('click', function () {
+          setTimeout(() => {
+            Plotly.purge(document.getElementById('shapShcementLinear'))
+            Plotly.plot(document.getElementById('shapShcementLinear'), {
+              data: shapShcementLinear.data,
+              layout: shapShcementLinear.layout,
+              frames: shapShcementLinear.frames
+            })
+          }, 50)
+        })
+      })
+    </script>
   </body>
 </html>
