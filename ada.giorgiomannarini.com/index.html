@@ -811,6 +811,20 @@
               deviation for the last two outcome variables so high in the
               control group? Time for some plots!
             </p>
+            <div
+              class="mt-5 plotly-graph-div"
+              style="height: 70vh;"
+              id="controlVariance"
+            ></div>
+            <p class="mt-5 text-justify">
+              There are three households that earn
+              way more than the others, this explains the high standard deviation. The same analysis can be used to explain
+              the huge std of the other variable, <span class="bg-light text-monospace">S_assetspc</span>. 
+            </p>
+            <p class="mt-2 text-justify font-weight-bold">
+              This brief
+              analysis was just to satisfy our curiosity. Now back on track!
+            </p>
           </div>
         </div>
       </section>
@@ -824,61 +838,379 @@
               Using different models to analyse author's conclusions
             </h3>
             <p class="text-justify">
-              We reported in the result section what the authors achieved, but
-              we think there might be a lot more under the carpet that deserves
-              to be mentioned. To assess the author's result robustness we run
-              different and more complex models with respect to a simple linear
-              regression, using a tecnique called <i>SHAP values</i> to
-              interpret how much (on average) each regression variable
-              contributes to the outcome. So before we jump in the main part of
-              our analysis, let's describe what these SHAP values are!
-              Unfortunately there's going to be a little bit of math in this
-              part, but nothing too worrying. We will walk you thorugh an
-              example with a linear regression model on table 4 as, it is the
-              simplest model to grasp.
+              We reported in the <a href="#results">result section</a> what the
+              authors achieved, but we think there might be a lot more under the
+              carpet that deserves to be mentioned. To assess the author's
+              result robustness we run different and more complex models with
+              respect to a simple linear regression, using a tecnique called
+              <i>SHAP values</i> to interpret how much (on average) each
+              regression variable contributes to the outcome. So before we jump
+              in the main part of our analysis, let's describe what these SHAP
+              values are! Unfortunately there's going to be a little bit of math
+              in this part, but nothing too worrying. We will walk you thorugh
+              an example with a linear regression model on table 4 as it is the
+              simplest model to grasp. For a more complete explanation about
+              SHAP values please refer to the Jupyter Notebook (PUT LINK) that
+              comes with this datastory.
             </p>
             <p class="mt-5 text-left">
               <small
                 ><b>Already know what SHAP values are?</b>
-                <a href="#portfolio"
+                <a href="#first-results"
                   >Jump to the results of our analysis!</a
                 ></small
               >
             </p>
-            <p class="mt-5 text-justify">
-              For linear regression, the shap values of a prediction are
-              singular for each feature. Each SHAP value represents the
-              contribution of the related feature to the difference between the
-              expected value of the model and its prediction for that single
-              datapoint, i.e:
-            </p>
-            <p class="text-center mt-3">
-              $ f(x_{sample}) - E[f(X)] = \sum_{features} SHAP_{feature} $
-            </p>
             <p class="text-justify mt-3">
               For this small walkthrough, we will consider as outcome the
-              variable `S_shcementfloor` (Share of rooms with cement floors) and
-              as independent variables, the ones considered by the third model
-              in the 4th table of the paper. At first, let's plot the model
-              coefficients, for a simple Linear Regression (a.k.a. the feature
-              importance plot).
+              variable
+              <span class="bg-light text-monospace">S_shcementfloor</span>
+              (Share of rooms with cement floors) and as independent variables,
+              the ones considered by the third model in the 4th table of the
+              paper. At first, let's plot the model coefficients, for a simple
+              Linear Regression (a.k.a. the feature importance plot).
             </p>
             <div
               class="mt-5 plotly-graph-div"
               style="height: 70vh;"
               id="linearCoeff"
             ></div>
-            <h3 class="subtitle text-center mb-5 mt-5">
+            <p class="mt-5 text-justify">
+              This plot, tells us how much change is caused by a feature when we
+              modify its input, but it is not complete. Indeed, the coefficients
+              could have very different scales, therefore comparing their
+              magnitudes is akin to comparing apples with oranges! Therefore, to
+              properly evaluate the impact of a feature, we consider:
+            </p>
+            <div class="row our-questions text-justify mt-2">
+              <div class="col">
+                <ul>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    Its effect on the output with a variation of the input.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    The distribution of the input for that feature.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-5 text-justify">
+              From these considerations, given also that for more complex models
+              a feature importance plot is not so easy to obtain,
+              <b>Scott M. Lundberg</b> and <b>Su-In Lee</b>
+              <a
+                href="https://papers.nips.cc/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf"
+                >invented SHAP values</a
+              >. If you find the linked paper too dense and not easy to
+              understand, we provide a more visual explanation in our notebook
+              (LINK), that includes the so called
+              <i>partial dependence plots</i> and other mathematical
+              derivations, and that we don't report here for brevity.
+            </p>
+            <p class="mt-5 text-justify">
+              In particular, for a Linear Regression, the SHAP values of a
+              prediction are singular for each feature. Each SHAP value
+              represents the contribution of the related feature to the
+              difference between the expected value of the model and its
+              prediction for that single datapoint, i.e:
+            </p>
+            <p class="text-center mt-3">
+              $ f(x_{sample}) - E[f(X)] = \sum_{features} SHAP_{feature} $
+            </p>
+            <p class="mt-5 text-justify">
+              Taking a random sample from our dataset, we can visualize this
+              contribution.
+            </p>
+            <p
+              class="mt-5"
+              style="font-size: 17px; color: #2a3f5f; font-family: 'Open Sans'"
+              ;
+            >
+              SHAP values (all features) for a single random prediction
+            </p>
+            <p></p>
+            <div class="mt-3 row justify-content-md-center">
+              <div class="col-lg-8">
+                <img class="w-100 h-100" src="assets/img/shap.svg" alt="" />
+              </div>
+            </div>
+
+            <p class="mt-5 text-justify">
+              We can see that for this datapoint, the SHAP value for
+              <span class="bg-light text-monospace">dpisofirme</span> is the
+              highest, indicating that it has the most important impact on the
+              prediction of that point. Nevertheless, we can see that there are
+              other variables that contributed significantly to the predicition,
+              namely
+              <span class="bg-light text-monospace">S_rooms</span> (number of
+              rooms in the house), that was not included in the analysis done by
+              the researchers (probably by mistake!), but also
+              <span class="bg-light text-monospace">S_waterhouse</span> (dummy
+              variable that indicates if the household had direct access to a
+              water source in their house). <br />
+              However, we are only considering one datapoint here. We should try
+              looking at the big picutre by plotting the distribution of these
+              SHAP values, for each feature, across all datapoints.
+            </p>
+            <p
+              class="mt-5"
+              style="font-size: 17px; color: #2a3f5f; font-family: 'Open Sans'"
+              ;
+            >
+              SHAP values (all features) for all predictions
+            </p>
+            <p></p>
+            <div class="mt-3 row justify-content-md-center">
+              <div class="col-lg-8">
+                <img class="w-100 h-100" src="assets/img/shap_all.svg" alt="" />
+              </div>
+            </div>
+            <p class="mt-5 text-justify">
+              This plot shows the distribution of the SHAP values for each
+              feature. There are several observations we can make:
+            </p>
+            <div class="row our-questions text-justify mt-2">
+              <div class="col">
+                <ul>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    The height of the bar for each feature is proportonal to the
+                    number of samples that have that SHAP value.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    We can see that, starting from the bottom, most of the
+                    features have their SHAP values centered around zero, with
+                    almost zero variance, which means that they do not
+                    contribute significantly to the prediction.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    On the other hand, for dpisofirme, since, it is categorical,
+                    there are only two possibilities, for the SHAP values, which
+                    are pretty high since the distribution has high variance
+                    around its mean. This shows that dpisofirme, had a
+                    significant impact on the outcome of the prediction.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    From this, we can see that there are other variables with
+                    significant impact such as
+                    <span class="bg-light text-monospace">S_waterhouse</span>and
+                    <span class="bg-light text-monospace">S_rooms</span>.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    Additionally, some variables also have high SHAP values for
+                    certain datapoints, but these correspond to outliers and do
+                    not reflect the distribution of the SHAP values.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="mt-5 text-justify font-weight-bold">
+              Bla bla bla... What a boring analysis! Where are the interesting
+              things?
+            </p>
+            <h3 class="subtitle text-center mb-5 mt-5" id="first-results">
               Mexican people are democratic, and love their children
             </h3>
             <p class="text-justify">
               Before moving to more complex models, let's try to have some
-              better insights on the linear regression we made, using SHAP
-              values. We report, for each outcome variable of paper's table 4, a
-              plot containing the shap values of model's features. We are not
-              only interested in seeing whether the author's assumptions hold
-              under this new, more advanced, analysis, but also to discover new
-              interesting facts from the data.
+              better insights on the linear regression we made. We report, for
+              each outcome variable of paper's table 4, a plot containing the
+              SHAP values of model's features. We are not only interested in
+              seeing whether the author's assumptions hold under this new, more
+              advanced, analysis, but also to discover new interesting facts
+              from the data. <br />
+              Instead of using the previous plot, let's simplify it a little bit
+              with a bar-plot.
+            </p>
+            <div class="row">
+              <div
+                class="col-lg-12 d-flex justify-content-center"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <ul id="portfolio-flters">
+                  <li
+                    data-filter=".filter-shcement"
+                    class="filter-active"
+                    data="shapShcementLinear"
+                  >
+                    Share of rooms with cement floor
+                  </li>
+                  <li data-filter=".filter-cementkit" data="shapKitchenLinear">
+                    Cement floor in kitchen
+                  </li>
+                  <li data-filter=".filter-cementdin" data="shapDiningLinear">
+                    Cement floor in dining room
+                  </li>
+                  <li data-filter=".filter-cementbath" data="shapBathLinear">
+                    Cement floor in bathroom
+                  </li>
+                  <li data-filter=".filter-cementbed" data="shapBedLinear">
+                    Cement floor in bedroom
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div
+              class="row portfolio-container"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div class="col-lg-12 col-md-12 portfolio-item filter-shcement">
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapShcementLinear"
+                ></div>
+              </div>
+              <div class="col-lg-12 col-md-12 portfolio-item filter-cementkit">
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapKitchenLinear"
+                ></div>
+              </div>
+              <div class="col-lg-12 col-md-12 portfolio-item filter-cementdin">
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapDiningLinear"
+                ></div>
+              </div>
+              <div class="col-lg-12 col-md-12 portfolio-item filter-cementbath">
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapBathLinear"
+                ></div>
+              </div>
+              <div class="col-lg-12 col-md-12 portfolio-item filter-cementbed">
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapBedLinear"
+                ></div>
+              </div>
+            </div>
+            <p class="text-justify mt-5">
+              The results reported in the paper still hold, however, there's
+              something that needs to be noticed:
+            </p>
+            <div class="row our-questions text-justify mt-2">
+              <div class="col">
+                <ul>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    The variable
+                    <span class="bg-light text-monospace">S_rooms</span> (number
+                    of rooms in the house) has a noticeable positive correlation
+                    with these outcomes:
+                    <span class="bg-light text-monospace">S_cementfloorkit</span
+                    >,
+                    <span class="bg-light text-monospace">S_cementfloordin</span
+                    >,
+                    <span class="bg-light text-monospace">S_cementfloorbat</span
+                    >, but has little to no correlation with the outcome
+                    <span class="bg-light text-monospace">S_cementfloorbed</span
+                    >. Do you notice a pattern here?
+                    <b>Well... We do!</b>
+                    <br />
+                    The rooms that are correlated with the outcome are all
+                    common spaces (kitchen, dining room, bathtroom), while the
+                    bedroom, which is not a common space, is not correlated, in
+                    terms of "cementification" of the floor, with
+                    <span class="bg-light text-monospace">S_rooms</span>. This
+                    could be explained: since the amount of cement each
+                    household could receive was enought to cover up to
+                    <span class="font-italic">50 square meters of floor</span>,
+                    if a household had many rooms they would have had, probably,
+                    more than one bedroom. So, how would they decide which room
+                    to put cement in? Of course the fairest choice is to put
+                    cement in a common space, and not in one of the bedrooms. So
+                    the more rooms a household had, the more likely was to use
+                    Piso Firme to put cement in a common room and not in one
+                    bedroom... <b>Interesting</b>.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    For the outcome variable
+                    <span class="bg-light text-monospace"
+                      >S_cementfloorbat</span
+                    >
+                    we notice that
+                    <span class="bg-light text-monospace">S_waterhouse</span>
+                    (dummy variable that represents whether there was water
+                    connection inside the house) has almost the same (positive)
+                    impact of
+                    <span class="bg-light text-monospace">dpisofirme</span>. Of
+                    course, this makes total sense: if a house hasn't water
+                    connection, it's unlikely that the house has a proper
+                    bathroom, so the household decided to put cement in a proper
+                    room.
+                  </li>
+                  <li>
+                    <i class="icofont-rounded-right"></i>
+                    For the outcome variable
+                    <span class="bg-light text-monospace"
+                      >S_cementfloorbed</span
+                    >
+                    it is possible to make some more considerations: we notice
+                    that <span class="bg-light text-monospace">S_dem2</span> and
+                    <span class="bg-light text-monospace">S_dem6</span>, namely
+                    the number of males and females between 6 and 17 years in
+                    the family, in 2005, have a positive correlation with the
+                    outcome, while
+                    <span class="bg-light text-monospace">S_HHpeople</span>
+                    (number of household members) correlation with
+                    <span class="bg-light text-monospace"
+                      >S_cementfloorbed</span
+                    >
+                    is hugely negative. <b>What is going on?</b><br />
+                    Let's start with
+                    <span class="bg-light text-monospace">S_HHpeople</span>:
+                    normally, the more households members, the more bedrooms
+                    there are in a house. As we said in the first point of this
+                    analysis, when a house has more than one bedroom, it's more
+                    likely the family decided to put cement in a common space,
+                    in a "democratic" fashion. <b>But</b> why, then, the
+                    correlation with the children-related variables? Let's not
+                    forget that, while the survey was conducted in 2005, Piso
+                    Firme started to take place (for the treatment group) in
+                    2000. This means that, in 2000,
+                    <span class="bg-light text-monospace">S_dem2</span> and
+                    <span class="bg-light text-monospace">S_dem6</span>
+                    represented the number of children between 1 and 12 years
+                    old in the house. From a parent perspective, it makes total
+                    sense to put cement in the bedroom (or in children's
+                    bedroom, if there's more than one bedroom)! So if, when Piso
+                    Firme was offered to the household, children were present,
+                    their parents would decide to put cement in their bedroom to
+                    ensure them better life conditions.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <p class="text-justify mt-4">
+              This is only the first analysis of this extension, but we
+              understood many things: first of all Mexican people, at least from
+              this perspective, think in a "democratic" way: if only one part of
+              the family could live better having cement floor in its bedroom,
+              well, that's not fair and so cement was put in a common space of
+              the house. Secondly, this "democratic" way of thinking doesn't
+              apply to the situation in which there are children in the family,
+              that are privileged in the choice of where to put cement. It would
+              be nice to interview again the households that took part in the
+              2005 survey to assess whether our conclusion are well thought, but
+              unfortunately this is not possible. However, it's still wonderful
+              to see how many considerations can be made with a "simple" dataset
+              like the one we are analysing.
             </p>
           </div>
         </div>
@@ -896,136 +1228,6 @@
               quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
               Quia fugiat sit in iste officiis commodi quidem hic quas.
             </p>
-          </div>
-
-          <div class="row">
-            <div
-              class="col-lg-12 d-flex justify-content-center"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <ul id="portfolio-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">App</li>
-                <li data-filter=".filter-card">Card</li>
-                <li data-filter=".filter-web">Web</li>
-              </ul>
-            </div>
-          </div>
-
-          <div
-            class="row portfolio-container"
-            data-aos="fade-up"
-            data-aos-delay="200"
-          >
-            <div class="col-lg-12 col-md-12 portfolio-item filter-app">
-              <div
-                class="plotly-graph-div"
-                style="height: 70vh;"
-                id="shapShcementLinear"
-              ></div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-2.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Web 3</h4>
-                  <p>Web</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-2.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="Web 3"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-5.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Web 2</h4>
-                  <p>Web</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-5.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="Web 2"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-12 col-md-12 portfolio-item filter-card">
-              <div
-                class="plotly-graph-div"
-                style="height: 70vh;"
-                id="shapShcementLinear"
-              ></div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-              <div class="portfolio-wrap">
-                <img
-                  src="assets/img/portfolio/portfolio-9.jpg"
-                  class="img-fluid"
-                  alt=""
-                />
-                <div class="portfolio-info">
-                  <h4>Web 3</h4>
-                  <p>Web</p>
-                  <div class="portfolio-links">
-                    <a
-                      href="assets/img/portfolio/portfolio-9.jpg"
-                      data-gall="portfolioGallery"
-                      class="venobox"
-                      title="Web 3"
-                      ><i class="bx bx-plus"></i
-                    ></a>
-                    <a
-                      href="portfolio-details.html"
-                      data-gall="portfolioDetailsGallery"
-                      data-vbtype="iframe"
-                      class="venobox"
-                      title="Portfolio Details"
-                      ><i class="bx bx-link"></i
-                    ></a>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>
@@ -1490,6 +1692,11 @@
     <script src="assets/js/plotlyjs-bundle.js"></script>
     <script src="assets/js/lin-reg-coeff.js"></script>
     <script src="assets/js/shap-shcement-linear.js"></script>
+    <script src="assets/js/shap-kitchen-linear.js"></script>
+    <script src="assets/js/shap-dining-linear.js"></script>
+    <script src="assets/js/shap-bath-linear.js"></script>
+    <script src="assets/js/shap-bed-linear.js"></script>
+    <script src="assets/js/control-variance.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
       id="MathJax-script"
@@ -1538,16 +1745,25 @@
         }
         plot('linearCoeff')
         plot('shapShcementLinear')
+        plot('shapKitchenLinear')
+        plot('shapDiningLinear')
+        plot('shapBathLinear')
+        plot('shapBedLinear')
+        plot('controlVariance')
 
         $('#portfolio-flters li').on('click', function () {
+          var idPlot = $(this).attr('data')
           setTimeout(() => {
-            Plotly.purge(document.getElementById('shapShcementLinear'))
-            Plotly.plot(document.getElementById('shapShcementLinear'), {
-              data: shapShcementLinear.data,
-              layout: shapShcementLinear.layout,
-              frames: shapShcementLinear.frames
+            Plotly.purge(document.getElementById(idPlot))
+            Plotly.plot(document.getElementById(idPlot), {
+              data: window[idPlot].data,
+              layout: window[idPlot].layout,
+              frames: window[idPlot].frames
             })
           }, 50)
+        })
+        window.addEventListener('refreshPlots', function () {
+          $('#portfolio-flters li.filter-active').trigger('click')
         })
       })
     </script>
