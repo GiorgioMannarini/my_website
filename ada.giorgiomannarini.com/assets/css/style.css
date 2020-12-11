@@ -1199,3 +1199,13 @@ table tr:nth-child(odd) td{
 table tr:nth-child(even) td{
    background:#343a4010;
 }
+
+.my-result {
+  box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.my-result:hover {
+  box-shadow: 0 5px 15px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}

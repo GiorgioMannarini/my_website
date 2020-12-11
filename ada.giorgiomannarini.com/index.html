@@ -818,13 +818,14 @@
               data-aos="fade-up"
             ></div>
             <p class="mt-5 text-justify">
-              There are three households that earn
-              way more than the others, this explains the high standard deviation. The same analysis can be used to explain
-              the huge std of the other variable, <span class="bg-light text-monospace">S_assetspc</span>. 
+              There are three households that earn way more than the others,
+              this explains the high standard deviation. The same analysis can
+              be used to explain the huge std of the other variable,
+              <span class="bg-light text-monospace">S_assetspc</span>.
             </p>
             <p class="mt-2 text-justify font-weight-bold">
-              This brief
-              analysis was just to satisfy our curiosity. Now back on track!
+              This brief analysis was just to satisfy our curiosity. Now back on
+              track!
             </p>
           </div>
         </div>
@@ -932,7 +933,7 @@
             >
               SHAP values (all features) for a single random prediction
             </p>
-            <p></p>
+
             <div class="mt-3 row justify-content-md-center" data-aos="fade-up">
               <div class="col-lg-8">
                 <img class="w-100 h-100" src="assets/img/shap.svg" alt="" />
@@ -963,7 +964,7 @@
             >
               SHAP values (all features) for all predictions
             </p>
-            <p></p>
+
             <div class="mt-3 row justify-content-md-center" data-aos="fade-up">
               <div class="col-lg-8">
                 <img class="w-100 h-100" src="assets/img/shap_all.svg" alt="" />
@@ -1036,24 +1037,41 @@
                 data-aos="fade-up"
                 data-aos-delay="100"
               >
-                <ul id="portfolio-flters">
+                <ul id="portfolio-flters" class="plots-linear">
                   <li
                     data-filter=".filter-shcement"
                     class="filter-active"
                     data="shapShcementLinear"
+                    data-plot="plots-linear"
                   >
                     Share of rooms with cement floor
                   </li>
-                  <li data-filter=".filter-cementkit" data="shapKitchenLinear">
+                  <li
+                    data-filter=".filter-cementkit"
+                    data="shapKitchenLinear"
+                    data-plot="plots-linear"
+                  >
                     Cement floor in kitchen
                   </li>
-                  <li data-filter=".filter-cementdin" data="shapDiningLinear">
+                  <li
+                    data-filter=".filter-cementdin"
+                    data="shapDiningLinear"
+                    data-plot="plots-linear"
+                  >
                     Cement floor in dining room
                   </li>
-                  <li data-filter=".filter-cementbath" data="shapBathLinear">
+                  <li
+                    data-filter=".filter-cementbath"
+                    data="shapBathLinear"
+                    data-plot="plots-linear"
+                  >
                     Cement floor in bathroom
                   </li>
-                  <li data-filter=".filter-cementbed" data="shapBedLinear">
+                  <li
+                    data-filter=".filter-cementbed"
+                    data="shapBedLinear"
+                    data-plot="plots-linear"
+                  >
                     Cement floor in bedroom
                   </li>
                 </ul>
@@ -1061,39 +1079,39 @@
             </div>
 
             <div
-              class="row portfolio-container"
+              class="row plots-linear-container"
               data-aos="fade-up"
               data-aos-delay="200"
             >
-              <div class="col-lg-12 col-md-12 portfolio-item filter-shcement">
+              <div class="col-lg-12 col-md-12 plots-linear-item filter-shcement">
                 <div
                   class="plotly-graph-div"
                   style="height: 70vh;"
                   id="shapShcementLinear"
                 ></div>
               </div>
-              <div class="col-lg-12 col-md-12 portfolio-item filter-cementkit">
+              <div class="col-lg-12 col-md-12 plots-linear-item filter-cementkit">
                 <div
                   class="plotly-graph-div"
                   style="height: 70vh;"
                   id="shapKitchenLinear"
                 ></div>
               </div>
-              <div class="col-lg-12 col-md-12 portfolio-item filter-cementdin">
+              <div class="col-lg-12 col-md-12 plots-linear-item filter-cementdin">
                 <div
                   class="plotly-graph-div"
                   style="height: 70vh;"
                   id="shapDiningLinear"
                 ></div>
               </div>
-              <div class="col-lg-12 col-md-12 portfolio-item filter-cementbath">
+              <div class="col-lg-12 col-md-12 plots-linear-item filter-cementbath">
                 <div
                   class="plotly-graph-div"
                   style="height: 70vh;"
                   id="shapBathLinear"
                 ></div>
               </div>
-              <div class="col-lg-12 col-md-12 portfolio-item filter-cementbed">
+              <div class="col-lg-12 col-md-12 plots-linear-item filter-cementbed">
                 <div
                   class="plotly-graph-div"
                   style="height: 70vh;"
@@ -1105,96 +1123,156 @@
               The results reported in the paper still hold, however, there's
               something that needs to be noticed:
             </p>
-            <div class="row our-questions text-justify mt-2">
-              <div class="col">
+            <div class="row our-questions text-justify mt-4">
+              <div class="col accordion" id="accordionTest">
                 <ul>
                   <li>
-                    <i class="icofont-rounded-right"></i>
-                    The variable
-                    <span class="bg-light text-monospace">S_rooms</span> (number
-                    of rooms in the house) has a noticeable positive correlation
-                    with these outcomes:
-                    <span class="bg-light text-monospace">S_cementfloorkit</span
-                    >,
-                    <span class="bg-light text-monospace">S_cementfloordin</span
-                    >,
-                    <span class="bg-light text-monospace">S_cementfloorbat</span
-                    >, but has little to no correlation with the outcome
-                    <span class="bg-light text-monospace">S_cementfloorbed</span
-                    >. Do you notice a pattern here?
-                    <b>Well... We do!</b>
-                    <br />
-                    The rooms that are correlated with the outcome are all
-                    common spaces (kitchen, dining room, bathtroom), while the
-                    bedroom, which is not a common space, is not correlated, in
-                    terms of "cementification" of the floor, with
-                    <span class="bg-light text-monospace">S_rooms</span>. This
-                    could be explained: since the amount of cement each
-                    household could receive was enought to cover up to
-                    <span class="font-italic">50 square meters of floor</span>,
-                    if a household had many rooms they would have had, probably,
-                    more than one bedroom. So, how would they decide which room
-                    to put cement in? Of course the fairest choice is to put
-                    cement in a common space, and not in one of the bedrooms. So
-                    the more rooms a household had, the more likely was to use
-                    Piso Firme to put cement in a common room and not in one
-                    bedroom... <b>Interesting</b>.
+                    <div
+                      id="headingOne"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                        <i class="icofont-rounded-right"></i>
+                        The democratic attitude of Mexican people
+                      </h5>
+                    </div>
+                    <div
+                      id="collapseOne"
+                      class="collapse ml-1"
+                      aria-labelledby="headingOne"
+                      data-parent="#accordionTest"
+                    >
+                      The variable
+                      <span class="bg-light text-monospace">S_rooms</span>
+                      (number of rooms in the house) has a noticeable positive
+                      correlation with these outcomes:
+                      <span class="bg-light text-monospace"
+                        >S_cementfloorkit</span
+                      >,
+                      <span class="bg-light text-monospace"
+                        >S_cementfloordin</span
+                      >,
+                      <span class="bg-light text-monospace"
+                        >S_cementfloorbat</span
+                      >, but has little to no correlation with the outcome
+                      <span class="bg-light text-monospace"
+                        >S_cementfloorbed</span
+                      >. Do you notice a pattern here?
+                      <b>Well... We do!</b>
+                      <br />
+                      The rooms that are correlated with the outcome are all
+                      common spaces (kitchen, dining room, bathtroom), while the
+                      bedroom, which is not a common space, is not correlated,
+                      in terms of "cementification" of the floor, with
+                      <span class="bg-light text-monospace">S_rooms</span>. This
+                      could be explained: since the amount of cement each
+                      household could receive was enought to cover up to
+                      <span class="font-italic">50 square meters of floor</span
+                      >, if a household had many rooms they would have had,
+                      probably, more than one bedroom. So, how would they decide
+                      which room to put cement in? Of course the fairest choice
+                      is to put cement in a common space, and not in one of the
+                      bedrooms. So the more rooms a household had, the more
+                      likely was to use Piso Firme to put cement in a common
+                      room and not in one bedroom... <b>Interesting</b>.
+                    </div>
                   </li>
                   <li>
-                    <i class="icofont-rounded-right"></i>
-                    For the outcome variable
-                    <span class="bg-light text-monospace"
-                      >S_cementfloorbat</span
+                    <div
+                      id="headingTwo"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="true"
+                      aria-controls="collapseTwo"
                     >
-                    we notice that
-                    <span class="bg-light text-monospace">S_waterhouse</span>
-                    (dummy variable that represents whether there was water
-                    connection inside the house) has almost the same (positive)
-                    impact of
-                    <span class="bg-light text-monospace">dpisofirme</span>. Of
-                    course, this makes total sense: if a house hasn't water
-                    connection, it's unlikely that the house has a proper
-                    bathroom, so the household decided to put cement in a proper
-                    room.
+                      <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                        <i class="icofont-rounded-right"></i>
+                        Who needs a cement floor in the bathroom if they don’t
+                        have a bathroom?
+                      </h5>
+                    </div>
+                    <div
+                      id="collapseTwo"
+                      class="collapse ml-1"
+                      aria-labelledby="headingTwo"
+                      data-parent="#accordionTest"
+                    >
+                      For the outcome variable
+                      <span class="bg-light text-monospace"
+                        >S_cementfloorbat</span
+                      >
+                      we notice that
+                      <span class="bg-light text-monospace">S_waterhouse</span>
+                      (dummy variable that represents whether there was water
+                      connection inside the house) has almost the same
+                      (positive) impact of
+                      <span class="bg-light text-monospace">dpisofirme</span>.
+                      Of course, this makes total sense: if a house hasn't water
+                      connection, it's unlikely that the house has a proper
+                      bathroom, so the household decided to put cement in a
+                      proper room.
+                    </div>
                   </li>
                   <li>
-                    <i class="icofont-rounded-right"></i>
-                    For the outcome variable
-                    <span class="bg-light text-monospace"
-                      >S_cementfloorbed</span
+                    <div
+                      id="headingThree"
+                      data-toggle="collapse"
+                      data-target="#collapseThree"
+                      aria-expanded="true"
+                      aria-controls="collapseThree"
                     >
-                    it is possible to make some more considerations: we notice
-                    that <span class="bg-light text-monospace">S_dem2</span> and
-                    <span class="bg-light text-monospace">S_dem6</span>, namely
-                    the number of males and females between 6 and 17 years in
-                    the family, in 2005, have a positive correlation with the
-                    outcome, while
-                    <span class="bg-light text-monospace">S_HHpeople</span>
-                    (number of household members) correlation with
-                    <span class="bg-light text-monospace"
-                      >S_cementfloorbed</span
+                      <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                        <i class="icofont-rounded-right"></i>
+                        The children effect
+                      </h5>
+                    </div>
+                    <div
+                      id="collapseThree"
+                      class="collapse ml-1"
+                      aria-labelledby="headingThree"
+                      data-parent="#accordionTest"
                     >
-                    is hugely negative. <b>What is going on?</b><br />
-                    Let's start with
-                    <span class="bg-light text-monospace">S_HHpeople</span>:
-                    normally, the more households members, the more bedrooms
-                    there are in a house. As we said in the first point of this
-                    analysis, when a house has more than one bedroom, it's more
-                    likely the family decided to put cement in a common space,
-                    in a "democratic" fashion. <b>But</b> why, then, the
-                    correlation with the children-related variables? Let's not
-                    forget that, while the survey was conducted in 2005, Piso
-                    Firme started to take place (for the treatment group) in
-                    2000. This means that, in 2000,
-                    <span class="bg-light text-monospace">S_dem2</span> and
-                    <span class="bg-light text-monospace">S_dem6</span>
-                    represented the number of children between 1 and 12 years
-                    old in the house. From a parent perspective, it makes total
-                    sense to put cement in the bedroom (or in children's
-                    bedroom, if there's more than one bedroom)! So if, when Piso
-                    Firme was offered to the household, children were present,
-                    their parents would decide to put cement in their bedroom to
-                    ensure them better life conditions.
+                      For the outcome variable
+                      <span class="bg-light text-monospace"
+                        >S_cementfloorbed</span
+                      >
+                      it is possible to make some more considerations: we notice
+                      that
+                      <span class="bg-light text-monospace">S_dem2</span> and
+                      <span class="bg-light text-monospace">S_dem6</span>,
+                      namely the number of males and females between 6 and 17
+                      years in the family, in 2005, have a positive correlation
+                      with the outcome, while
+                      <span class="bg-light text-monospace">S_HHpeople</span>
+                      (number of household members) correlation with
+                      <span class="bg-light text-monospace"
+                        >S_cementfloorbed</span
+                      >
+                      is hugely negative. <b>What is going on?</b><br />
+                      Let's start with
+                      <span class="bg-light text-monospace">S_HHpeople</span>:
+                      normally, the more households members, the more bedrooms
+                      there are in a house. As we said in the first point of
+                      this analysis, when a house has more than one bedroom,
+                      it's more likely the family decided to put cement in a
+                      common space, in a "democratic" fashion. <b>But</b> why,
+                      then, the correlation with the children-related variables?
+                      Let's not forget that, while the survey was conducted in
+                      2005, Piso Firme started to take place (for the treatment
+                      group) in 2000. This means that, in 2000,
+                      <span class="bg-light text-monospace">S_dem2</span> and
+                      <span class="bg-light text-monospace">S_dem6</span>
+                      represented the number of children between 1 and 12 years
+                      old in the house. From a parent perspective, it makes
+                      total sense to put cement in the bedroom (or in children's
+                      bedroom, if there's more than one bedroom)! So if, when
+                      Piso Firme was offered to the household, children were
+                      present, their parents would decide to put cement in their
+                      bedroom to ensure them better life conditions.
+                    </div>
                   </li>
                 </ul>
               </div>
@@ -1216,25 +1294,117 @@
             </p>
             <div data-aos="fade-up">
               <h3 class="subtitle text-center mb-5 mt-5" id="trees-results">
-                Looking for confirmation: decision trees
+                Looking for confirmations: decision trees
               </h3>
               <p class="text-justify mt-5">
-                This is only the first analysis of this extension, but we
-                understood many things: first of all Mexican people, at least from
-                this perspective, think in a "democratic" way: if only one part of
-                the family could live better having cement floor in its bedroom,
-                well, that's not fair and so cement was put in a common space of
-                the house. Secondly, this "democratic" way of thinking doesn't
-                apply to the situation in which there are children in the family,
-                that are privileged in the choice of where to put cement. It would
-                be nice to interview again the households that took part in the
-                2005 survey to assess whether our conclusion are well thought, but
-                unfortunately this is not possible. However, it's still wonderful
-                to see how many considerations can be made with a "simple" dataset
-                like the one we are analysing.
+                We now turn our attention to decision tree models. To estimate
+                the impact of each feature, we consider when the split occurs:
+                the tree will try to split at first on the features with the
+                highest predictive value. We also take into account the SHAP
+                values of each model.
+                <br />
+                Again, for the sake of brevity, we don't show each tree, we only
+                report its SHAP values. You can visualize each model in a more
+                complete fashion in our notebook.
               </p>
             </div>
-            
+            <div class="row">
+              <div
+                class="col-lg-12 d-flex justify-content-center"
+                data-aos="fade-up"
+                data-aos-delay="100"
+              >
+                <ul id="portfolio-flters" class="plots-tree">
+                  <li
+                    data-filter=".filter-shcement-tree"
+                    data-plot="plots-tree"
+                    class="filter-active"
+                    data="shapShcementTree"
+                  >
+                    Share of rooms with cement floor
+                  </li>
+                  <li
+                    data-filter=".filter-cementkit-tree"
+                    data-plot="plots-tree"
+                    data="shapKitchenTree"
+                  >
+                    Cement floor in kitchen
+                  </li>
+                  <li
+                    data-filter=".filter-cementdin-tree"
+                    data-plot="plots-tree"
+                    data="shapDiningTree"
+                  >
+                    Cement floor in dining room
+                  </li>
+                  <li
+                    data-filter=".filter-cementbath-tree"
+                    data-plot="plots-tree"
+                    data="shapBathTree"
+                  >
+                    Cement floor in bathroom
+                  </li>
+                  <li
+                    data-filter=".filter-cementbed-tree"
+                    data-plot="plots-tree"
+                    data="shapBedTree"
+                  >
+                    Cement floor in bedroom
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div
+              class="row plots-tree-container"
+              data-aos="fade-up"
+              data-aos-delay="200"
+            >
+              <div
+                class="col-lg-12 col-md-12 plots-tree-item filter-shcement-tree"
+              >
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapShcementTree"
+                ></div>
+              </div>
+              <div
+                class="col-lg-12 col-md-12 plots-tree-item filter-cementkit-tree"
+              >
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapKitchenTree"
+                ></div>
+              </div>
+              <div
+                class="col-lg-12 col-md-12 plots-tree-item filter-cementdin-tree"
+              >
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapDiningTree"
+                ></div>
+              </div>
+              <div
+                class="col-lg-12 col-md-12 plots-tree-item filter-cementbath-tree"
+              >
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapBathTree"
+                ></div>
+              </div>
+              <div
+                class="col-lg-12 col-md-12 plots-tree-item filter-cementbed-tree"
+              >
+                <div
+                  class="plotly-graph-div"
+                  style="height: 70vh;"
+                  id="shapBedTree"
+                ></div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -1720,6 +1890,11 @@
     <script src="assets/js/shap-bath-linear.js"></script>
     <script src="assets/js/shap-bed-linear.js"></script>
     <script src="assets/js/control-variance.js"></script>
+    <script src="assets/js/shap-shcement-tree.js"></script>
+    <script src="assets/js/shap-kitchen-tree.js"></script>
+    <script src="assets/js/shap-dining-tree.js"></script>
+    <script src="assets/js/shap-bath-tree.js"></script>
+    <script src="assets/js/shap-bed-tree.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
       id="MathJax-script"
@@ -1773,6 +1948,11 @@
         plot('shapBathLinear')
         plot('shapBedLinear')
         plot('controlVariance')
+        plot('shapShcementTree')
+        plot('shapKitchenTree')
+        plot('shapDiningTree')
+        plot('shapBathTree')
+        plot('shapBedTree')
 
         $('#portfolio-flters li').on('click', function () {
           var idPlot = $(this).attr('data')
