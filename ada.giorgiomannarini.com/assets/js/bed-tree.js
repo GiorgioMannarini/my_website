@@ -1,121 +1,61 @@
-var shapDiningTree = {
+var bedTree = {
     "data": [
         {
+            "fill": "none",
+            "line": {
+                "shape": "linear"
+            },
             "meta": {
                 "columnNames": {
-                    "x": "SHAP_abs",
-                    "y": "Variable",
-                    "marker": {
-                        "color": "Sign"
-                    }
+                    "x": "A",
+                    "y": "B",
+                    "text": ""
                 }
             },
-            "mode": "markers",
-            "type": "bar",
-            "xsrc": "francescoposa:18:c7f67f",
+            "mode": "markers+lines",
+            "type": "scatter",
+            "xsrc": "francescoposa:27:eeac31",
             "x": [
-                "0.0",
-                "0.0",
-                "0.0011091486093047645",
-                "0.001258490684538227",
-                "0.0013321299779553535",
-                "0.0026544555452536825",
-                "0.002669311365312593",
-                "0.0028098733905739842",
-                "0.003326187622295521",
-                "0.004378260376399457",
-                "0.0051473187272374306",
-                "0.005307614160895001",
-                "0.006057850197960282",
-                "0.010929466307969494",
-                "0.013020200583520436",
-                "0.017524326552475693",
-                "0.018566994201233932",
-                "0.019932111582798923",
-                "0.020778183411646726",
-                "0.020920960947780162",
-                "0.027204951648016885",
-                "0.02891856872790358",
-                "0.0333486022612743",
-                "0.03458312867494434",
-                "0.036539703813387725",
-                "0.039009064641269686",
-                "0.05340700184708616",
-                "0.05602714554366478",
-                "0.1070668343801841"
+                "0",
+                "1",
+                "1.5",
+                "1",
+                "0.5",
+                "1",
+                "0",
+                "-1",
+                "-1.5",
+                "-1",
+                "-0.5"
             ],
-            "ysrc": "francescoposa:18:20e790",
+            "ysrc": "francescoposa:27:06981b",
             "y": [
-                "S_headeduc_missing",
-                "S_cashtransfers_missing",
-                "S_spouseeduc_missing",
-                "S_electricity",
-                "S_seguropopular",
-                "S_milkprogram",
-                "S_garbage",
-                "S_waterland",
-                "S_dem8",
-                "S_foodprogram",
-                "S_animalsinside",
-                "S_hasanimals",
-                "S_dem4",
-                "S_HHpeople",
-                "S_dem3",
-                "S_dem2",
-                "S_spouseeduc",
-                "S_dem6",
-                "S_washhands",
-                "S_dem7",
-                "S_dem1",
-                "S_dem5",
-                "S_cashtransfers",
-                "S_spouseage",
-                "S_headage",
-                "S_headeduc",
-                "S_rooms",
-                "S_waterhouse",
-                "dpisofirme"
+                "3",
+                "2",
+                "0",
+                "2",
+                "0",
+                "2",
+                "3",
+                "2",
+                "0",
+                "2",
+                "0"
             ],
             "marker": {
-                "meta": {
-                    "columnNames": {
-                        "color": "Sign"
-                    }
+                "line": {
+                    "width": 0
                 },
-                "colorsrc": "francescoposa:18:0c3913",
-                "color": [
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#0563bb",
-                    "#B33951",
-                    "#B33951",
-                    "#0563bb",
-                    "#0563bb",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#0563bb",
-                    "#B33951",
-                    "#0563bb",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#B33951",
-                    "#0563bb",
-                    "#0563bb",
-                    "#0563bb",
-                    "#0563bb",
-                    "#0563bb",
-                    "#0563bb"
-                ]
+                "size": 100,
+                "color": "rgb(5, 99, 187)",
+                "symbol": "square"
             },
-            "orientation": "h"
+            "hoveron": "points",
+            "hoverinfo": "x+y+text",
+            "cliponaxis": false,
+            "hoverlabel": {
+                "align": "left"
+            }
         }
     ],
     "layout": {
@@ -124,27 +64,35 @@ var shapDiningTree = {
         },
         "title": {
             "x": 0.5,
-            "text": "Outcome: Cement floor in dining room"
+            "text": "Outcome: Cement floor in bedroom"
         },
         "xaxis": {
             "type": "linear",
             "range": [
-                0,
-                0.11270193092650958
+                -1.918246588576259,
+                1.918246588576259
             ],
-            "title": {
-                "text": "SHAP Value (Blue positive impact)"
-            },
-            "autorange": true
+            "ticks": "",
+            "showgrid": false,
+            "showline": false,
+            "zeroline": false,
+            "autorange": true,
+            "showspikes": false,
+            "showticklabels": false
         },
         "yaxis": {
-            "type": "category",
+            "type": "linear",
             "range": [
-                -0.5,
-                28.5
+                -1.0020048115477147,
+                4.002004811547715
             ],
-            "tickmode": "linear",
-            "autorange": true
+            "ticks": "",
+            "showgrid": false,
+            "showline": false,
+            "zeroline": false,
+            "autorange": true,
+            "showspikes": false,
+            "showticklabels": false
         },
         "autosize": true,
         "template": {
@@ -683,7 +631,83 @@ var shapDiningTree = {
                 }
             },
             "themeRef": "PLOTLY_WHITE"
-        }
+        },
+        "clickmode": "none",
+        "hovermode": false,
+        "annotations": [
+            {
+                "x": 0,
+                "y": 2.993617021276596,
+                "ax": -98,
+                "ay": -63,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_dpisofirme<br>&lt;= 0.5",
+                "showarrow": false
+            },
+            {
+                "x": -0.9998792416374835,
+                "y": 1.9881101376720902,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_waterhouse<br>&lt;= 0.5<br>",
+                "showarrow": false
+            },
+            {
+                "x": 0.99936,
+                "y": 1.9881101376720902,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_headeduc<br>&lt;= 0.25",
+                "showarrow": false
+            },
+            {
+                "x": -1.5,
+                "y": -0.0269712140175218,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_dem2<br>&lt;= 0.211",
+                "showarrow": false
+            },
+            {
+                "x": -0.4999713681922474,
+                "y": -0.0269712140175218,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_HHpeople<br>&lt;= 6.5",
+                "showarrow": false
+            },
+            {
+                "x": 0.4959707764762709,
+                "y": -0.0269712140175218,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_dem7<br>&lt;= 0.414<br>",
+                "showarrow": false
+            },
+            {
+                "x": 1.4953278589542327,
+                "y": -0.0269712140175218,
+                "font": {
+                    "size": 14,
+                    "color": "rgb(255, 255, 255)"
+                },
+                "text": "S_HHpeople<br>&lt;= 7.5",
+                "showarrow": false
+            }
+        ]
     },
     "frames": []
 }
