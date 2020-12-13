@@ -4,13 +4,18 @@
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>MyResume Bootstrap Template - Index</title>
+    <title>Piso Firme and its hidden impact</title>
     <meta content="" name="descriptison" />
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon" />
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
 
     <!-- Google Fonts -->
     <link
@@ -92,13 +97,15 @@
     <section id="hero" class="d-flex flex-column justify-content-center">
       <div class="container" data-aos="zoom-in" data-aos-delay="100">
         <h1>Piso Firme</h1>
-        <h2>and its hidden impact</h2>
+        <p class="mt-1 pt-0">
+        <span class="typed" data-typed-items="and its hidden impact"></span>
+        </p>
         <p>
-          An analysis done by
-          <span
-            class="typed"
-            data-typed-items="Amine Chaouachi, Giorgio Mannarini, Francesco Posa"
-          ></span>
+          An analysis done by <br />
+          <small>A. Chaouachi</small>
+          <small class="ml-3">G. Mannarini</small>
+          <small class="ml-3">F. Posa</small>
+          </p>
         </p>
       </div>
     </section>
@@ -779,24 +786,24 @@
                     <i class="icofont-rounded-right"></i>
                     Talking about the household income and assets per capita in
                     2005, first of all we notice that, for the control group,
-                    the standard deviation is huge. This suggests that these
-                    economical indicators have a huge variation across the
-                    families. Moreover, for the total household income per
-                    capita we notice an unexpected decrease for the treated
-                    group, but even in this case we can't state anything about
-                    Piso Firme effect, since the p-values are way higher than
-                    0.05. With respect to the households assets, we notice, this
-                    time, an increase for the treated group, which is expected,
-                    since the value of a house increases whith the replacement
-                    of the floor's material. However, even in this case, we are
-                    not in the position to state anything, because of the
-                    p-values.
+                    the standard deviation is considerably high. This suggests
+                    that these economical indicators have a significant
+                    variation across the families. Moreover, for the total
+                    household income per capita we notice an unexpected decrease
+                    for the treated group, but even in this case we can't state
+                    anything about Piso Firme effect, since the p-values are way
+                    higher than 0.05. With respect to the households assets, we
+                    notice, this time, an increase for the treated group, which
+                    is expected, since the value of a house increases whith the
+                    replacement of the floor's material. However, even in this
+                    case, we are not in the position to state anything, because
+                    of the p-values.
                   </li>
                 </ul>
               </div>
             </div>
             <p class="text-justify">
-              <b>Don't you notice something weird?</b> Why is the standard
+              <b>One last question before moving on:</b> Why is the standard
               deviation for the last two outcome variables so high in the
               control group? Time for some plots!
             </p>
@@ -809,7 +816,7 @@
             <p class="mt-5 text-justify">
               There are three households that earn way more than the others,
               this explains the high standard deviation. The same analysis can
-              be used to explain the huge std of the other variable,
+              be used to explain the std of the other variable,
               <span class="bg-light text-monospace">S_assetspc</span>.
             </p>
             <p class="mt-2 text-justify font-weight-bold">
@@ -1611,9 +1618,11 @@
             we tried to underline.
           </p>
           <p class="text-justify mt-3">
-            We also repeated the same analysis on a Random Forest model, with 20
+            <b>Note</b>: We also repeated the same analysis on a Random Forest model, with 20
             trees with a maximum depth of 10 levels. We do not report the
-            results here, as they are comparable to the ones presented here.
+            results here, as they are comparable to the ones presented here. Moreover, in our extension notebook we use another approach of assessment to evaluate the consistency of our results, which is called LIME.
+            The problem with LIME is that, ulinke SHAP, it only provides explanations for single predictions, and thus is not suitable for our purposes. Again, we don't report our considerations about LIME in this page because they
+            aren't really useful for our questions and conclusions, but if you are interested in a more techincal and in depth analysis, please refer to the notebook.
           </p>
         </div>
       </section>
@@ -2104,95 +2113,95 @@
       window.MathJax = {
         tex: {
           inlineMath: [
-            ["$", "$"],
-            ["\\(", "\\)"],
-          ],
+            ['$', '$'],
+            ['\\(', '\\)']
+          ]
         },
         svg: {
-          fontCache: "global",
-        },
-      };
+          fontCache: 'global'
+        }
+      }
       $(function () {
         var plot = function (id) {
-          window.PLOTLYENV = { BASE_URL: "https://plotly.com" };
+          window.PLOTLYENV = { BASE_URL: 'https://plotly.com' }
 
-          var gd = document.getElementById(id);
-          var resizeDebounce = null;
+          var gd = document.getElementById(id)
+          var resizeDebounce = null
 
-          function resizePlot() {
-            var bb = gd.getBoundingClientRect();
+          function resizePlot () {
+            var bb = gd.getBoundingClientRect()
             Plotly.relayout(gd, {
               width: bb.width,
-              height: bb.height,
-            });
+              height: bb.height
+            })
           }
 
-          window.addEventListener("resize", function () {
+          window.addEventListener('resize', function () {
             if (resizeDebounce) {
-              window.clearTimeout(resizeDebounce);
+              window.clearTimeout(resizeDebounce)
             }
-            resizeDebounce = window.setTimeout(resizePlot, 100);
-          });
+            resizeDebounce = window.setTimeout(resizePlot, 100)
+          })
 
           Plotly.plot(gd, {
             data: window[id].data,
             layout: window[id].layout,
-            frames: window[id].frames,
-          });
-        };
-        plot("linearCoeff");
-        plot("shapShcementLinear");
-        plot("shapKitchenLinear");
-        plot("shapDiningLinear");
-        plot("shapBathLinear");
-        plot("shapBedLinear");
-        plot("controlVariance");
-        plot("shapShcementTree");
-        plot("shapKitchenTree");
-        plot("shapDiningTree");
-        plot("shapBathTree");
-        plot("shapBedTree");
-        plot("shcementTree");
-        plot("diningTree");
-        plot("kitchenTree");
-        plot("bathTree");
-        plot("bedTree");
+            frames: window[id].frames
+          })
+        }
+        plot('linearCoeff')
+        plot('shapShcementLinear')
+        plot('shapKitchenLinear')
+        plot('shapDiningLinear')
+        plot('shapBathLinear')
+        plot('shapBedLinear')
+        plot('controlVariance')
+        plot('shapShcementTree')
+        plot('shapKitchenTree')
+        plot('shapDiningTree')
+        plot('shapBathTree')
+        plot('shapBedTree')
+        plot('shcementTree')
+        plot('diningTree')
+        plot('kitchenTree')
+        plot('bathTree')
+        plot('bedTree')
 
-        $("#portfolio-flters li").on("click", function () {
-          var idPlot = $(this).attr("data");
+        $('#portfolio-flters li').on('click', function () {
+          var idPlot = $(this).attr('data')
           setTimeout(() => {
-            Plotly.purge(document.getElementById(idPlot));
+            Plotly.purge(document.getElementById(idPlot))
             Plotly.plot(document.getElementById(idPlot), {
               data: window[idPlot].data,
               layout: window[idPlot].layout,
-              frames: window[idPlot].frames,
-            });
-          }, 50);
-        });
-        window.addEventListener("refreshPlots", function () {
-          $("#portfolio-flters li.filter-active").trigger("click");
-        });
+              frames: window[idPlot].frames
+            })
+          }, 50)
+        })
+        window.addEventListener('refreshPlots', function () {
+          $('#portfolio-flters li.filter-active').trigger('click')
+        })
 
-        $(".heading-btn").on("click", function () {
-          var arrow = $(this).find("i");
-          var target = $(this).attr("data-target");
-          var accordion = $(target).attr("data-parent");
+        $('.heading-btn').on('click', function () {
+          var arrow = $(this).find('i')
+          var target = $(this).attr('data-target')
+          var accordion = $(target).attr('data-parent')
 
-          if (arrow.hasClass("icofont-rounded-right")) {
-            $(accordion + " .icofont-rounded-down")
-              .removeClass("icofont-rounded-down")
-              .addClass("icofont-rounded-right");
+          if (arrow.hasClass('icofont-rounded-right')) {
+            $(accordion + ' .icofont-rounded-down')
+              .removeClass('icofont-rounded-down')
+              .addClass('icofont-rounded-right')
 
             arrow
-              .removeClass("icofont-rounded-right")
-              .addClass("icofont-rounded-down");
+              .removeClass('icofont-rounded-right')
+              .addClass('icofont-rounded-down')
           } else {
             arrow
-              .addClass("icofont-rounded-right")
-              .removeClass("icofont-rounded-down");
+              .addClass('icofont-rounded-right')
+              .removeClass('icofont-rounded-down')
           }
-        });
-      });
+        })
+      })
     </script>
   </body>
 </html>
