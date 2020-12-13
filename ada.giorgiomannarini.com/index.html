@@ -9,13 +9,13 @@
     <meta content="" name="keywords" />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="msapplication-TileColor" content="#da532c">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Google Fonts -->
     <link
@@ -98,14 +98,13 @@
       <div class="container" data-aos="zoom-in" data-aos-delay="100">
         <h1>Piso Firme</h1>
         <p class="mt-1 pt-0">
-        <span class="typed" data-typed-items="and its hidden impact"></span>
+          <span class="typed" data-typed-items="and its hidden impact"></span>
         </p>
         <p>
           An analysis done by <br />
           <small>A. Chaouachi</small>
           <small class="ml-3">G. Mannarini</small>
           <small class="ml-3">F. Posa</small>
-          </p>
         </p>
       </div>
     </section>
@@ -1618,11 +1617,192 @@
             we tried to underline.
           </p>
           <p class="text-justify mt-3">
-            <b>Note</b>: We also repeated the same analysis on a Random Forest model, with 20
-            trees with a maximum depth of 10 levels. We do not report the
-            results here, as they are comparable to the ones presented here. Moreover, in our extension notebook we use another approach of assessment to evaluate the consistency of our results, which is called LIME.
-            The problem with LIME is that, ulinke SHAP, it only provides explanations for single predictions, and thus is not suitable for our purposes. Again, we don't report our considerations about LIME in this page because they
-            aren't really useful for our questions and conclusions, but if you are interested in a more techincal and in depth analysis, please refer to the notebook.
+            <b>Note</b>: We also repeated the same analysis on a Random Forest
+            model, with 20 trees with a maximum depth of 10 levels. We do not
+            report the results here, as they are comparable to the ones
+            presented here. Moreover, in our extension notebook we use another
+            approach of assessment to evaluate the consistency of our results,
+            which is called LIME. The problem with LIME is that, ulinke SHAP, it
+            only provides explanations for single predictions, and thus is not
+            suitable for our purposes. Again, we don't report our considerations
+            about LIME in this page because they aren't really useful for our
+            questions and conclusions, but if you are interested in a more
+            techincal and in depth analysis, please refer to the notebook.
+          </p>
+          <h3 class="subtitle text-center mb-5 mt-5" id="trees-results">
+            The importance of water
+          </h3>
+          <p class="text-justify mt-3">
+            We notice the importance of
+            <span class="bg-light text-monospace">S_waterhouse</span> for the
+            previous outcomes. This leads to the following question:
+            <i
+              >is the presence of water in a household a significant predictor
+              for the presence of diseases or cognitive development in children?
+              If this is the case, would it have been more useful to bring water
+              to the household instead of cement?</i
+            >
+            We repeat the previous analysis for several outcomes related to
+            diseases and cognitive development (<span
+              class="bg-light text-monospace"
+              >S_diarrhea</span
+            >, <span class="bg-light text-monospace">S_anemia</span>,
+            <span class="bg-light text-monospace">S_parcount</span>,<span
+              class="bg-light text-monospace"
+              >S_mccdts</span
+            >, etc ...) and try to assess the importance of the predictor
+            <span class="bg-light text-monospace">S_waterhouse</span> with
+            respect to each of these outcomes. In particular, we report the
+            results of a linear regression, but for completeness we ran also a
+            Random Forest model on our notebook, which confirmed our tests.
+            <b>Time for more SHAP values!</b>
+          </p>
+          <div class="row" data-aos="fade-up">
+            <div
+              class="col-lg-12 d-flex justify-content-center"
+              data-aos-delay="100"
+            >
+              <ul id="portfolio-flters" class="plots-diseases">
+                <li
+                  data-filter=".filter-paracount"
+                  data-plot="plots-diseases"
+                  class="filter-active"
+                  data="shapParacount"
+                >
+                  Parasite count
+                </li>
+                <li
+                  data-filter=".filter-diarrhea"
+                  data-plot="plots-diseases"
+                  data="shapDiarrhea"
+                >
+                  Diarrhea
+                </li>
+                <li
+                  data-filter=".filter-anemia"
+                  data-plot="plots-diseases"
+                  data="shapAnemia"
+                >
+                  Anemia
+                </li>
+                <li
+                  data-filter=".filter-macarthur"
+                  data-plot="plots-diseases"
+                  data="shapMacArthur"
+                >
+                  MacArthur Communicative Development Test Score
+                </li>
+                <li
+                  data-filter=".filter-picture"
+                  data-plot="plots-diseases"
+                  data="shapPicture"
+                >
+                  Picture Peabody Vocabulary Test Percentile Score
+                </li>
+                <li
+                  data-filter=".filter-height"
+                  data-plot="plots-diseases"
+                  data="shapHeight"
+                >
+                  Height-for-age z-score
+                </li>
+                <li
+                  data-filter=".filter-weight"
+                  data-plot="plots-diseases"
+                  data="shapWeight"
+                >
+                  Weight-for-height z-score
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="row plots-diseases-container"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div
+              class="col-lg-12 col-md-12 plots-diseases-item filter-paracount"
+            >
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapParacount"
+              ></div>
+            </div>
+            <div
+              class="col-lg-12 col-md-12 plots-diseases-item filter-diarrhea"
+            >
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapDiarrhea"
+              ></div>
+            </div>
+            <div class="col-lg-12 col-md-12 plots-diseases-item filter-anemia">
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapAnemia"
+              ></div>
+            </div>
+            <div
+              class="col-lg-12 col-md-12 plots-diseases-item filter-macarthur"
+            >
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapMacArthur"
+              ></div>
+            </div>
+            <div class="col-lg-12 col-md-12 plots-diseases-item filter-picture">
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapPicture"
+              ></div>
+            </div>
+            <div class="col-lg-12 col-md-12 plots-diseases-item filter-height">
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapHeight"
+              ></div>
+            </div>
+            <div class="col-lg-12 col-md-12 plots-diseases-item filter-weight">
+              <div
+                class="plotly-graph-div"
+                style="height: 900px"
+                id="shapWeight"
+              ></div>
+            </div>
+          </div>
+          <p class="text-justify mt-3">
+            Other than the impact of <span class="bg-light text-monospace">dpisofirme</span>, which is not as significant
+            as before, we notice, as expected, that the age of the child taken
+            into account plays a significant role, especially for the variables
+            directly related to diseases, namely <span class="bg-light text-monospace">S_parcount</span>, <span class="bg-light text-monospace">S_diarrhea</span> and
+            <span class="bg-light text-monospace">S_anemia</span>. In particular, it seems that, for the parasite count,
+            this is positively correlated with the age of the person. This means
+            that the older the child was in 2005, the higher was the count of
+            parasites in its body (on average). For the other two variables we
+            notice a significant <b>negative</b> correlation with the age. This can
+            be considered normal, since some diseases are more related to young
+            children, others to older ones. An important consideration must be
+            made with respect to <span class="bg-light text-monospace">S_waterhouse</span> and <span class="bg-light text-monospace">S_washhands</span>: while for
+            anemia and parasite count it doesn't seem to be so important, for
+            diarrhea it is pretty clear that having water in the house higly
+            reduces the risk of this disease. This might be only a coincidence
+            (we repeat it: correlation doesn't mean causation), but it surely
+            might be a starting point for future studies. <br />
+            Maybe, then, a program
+            similar to Piso Firme could be offered to ensure every mexican has
+            water (and, consequently, a better hygene) in their house. Also,
+            having animals inside seems to be positively correlated with the
+            same disease. We don't notice other significant correlations in the
+            other variables: often the one with the highest SHAP value is a
+            <i>missing</i> one, which is just a dummy variable used to deal with
+            null values, as explained in our respective replications.
           </p>
         </div>
       </section>
@@ -2103,6 +2283,13 @@
     <script src="assets/js/kitchen-tree.js"></script>
     <script src="assets/js/bath-tree.js"></script>
     <script src="assets/js/bed-tree.js"></script>
+    <script src="assets/js/shap-paracount.js"></script>
+    <script src="assets/js/shap-diarrhea.js"></script>
+    <script src="assets/js/shap-anemia.js"></script>
+    <script src="assets/js/shap-macarthur.js"></script>
+    <script src="assets/js/shap-picture.js"></script>
+    <script src="assets/js/shap-height.js"></script>
+    <script src="assets/js/shap-weight.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script
       id="MathJax-script"
@@ -2166,6 +2353,13 @@
         plot('kitchenTree')
         plot('bathTree')
         plot('bedTree')
+        plot('shapParacount')
+        plot('shapDiarrhea')
+        plot('shapAnemia')
+        plot('shapMacArthur')
+        plot('shapPicture')
+        plot('shapHeight')
+        plot('shapWeight')
 
         $('#portfolio-flters li').on('click', function () {
           var idPlot = $(this).attr('data')

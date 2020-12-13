@@ -188,6 +188,9 @@
       }),
       'plots-tree': $('.plots-tree-container').isotope({
         itemSelector: '.plots-tree-item'
+      }),
+      'plots-diseases': $('.plots-diseases-container').isotope({
+        itemSelector: '.plots-diseases-item'
       })
     }
 
