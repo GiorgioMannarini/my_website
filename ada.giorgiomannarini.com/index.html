@@ -761,9 +761,7 @@
                 </tr>
               </tbody>
             </table>
-            <p class="text-justify mt-5">
-              Our analysis shows that:
-            </p>
+            <p class="text-justify mt-5">Our analysis shows that:</p>
             <div class="row our-questions text-justify mt-2">
               <div class="col">
                 <ul>
@@ -771,18 +769,9 @@
                     <i class="icofont-rounded-right"></i>
                     For the natality rate, we can't say that the program had an
                     effect on the outcome variables, namely the number of male
-                    and female children born between 2000 and 2005. Indeed, only
-                    in the first model, when we consider as outcome the
-                    proportion of males born between 2000 and 2005 the p-value
-                    is lower than the common threshold (0.05), and the program
-                    seems to have had a negative effect on this proportion.
-                    Anyway, considering that the other two models contradict
-                    this result, and considering that, when looking at the
-                    proportion of females born between 2000 and 2005 the
-                    p-values are all higher than the threshold, and the reported
-                    effect is insignificant, we definetly cannot state that Piso
-                    Firme had an effect on these variables. It would be
-                    certainly interesting to see the long-term effects of the
+                    and female children born between 2000 and 2005. Indeed, the
+                    p-value is higher than the common threshold (0.05). It would
+                    be certainly interesting to see the long-term effects of the
                     program in this sense on the treated households, but
                     unfortunately this kind of data is unavailable.
                   </li>
@@ -813,7 +802,7 @@
             </p>
             <div
               class="mt-5 plotly-graph-div"
-              style="height: 50vh;"
+              style="height: 50vh"
               id="controlVariance"
               data-aos="fade-up"
             ></div>
@@ -874,7 +863,7 @@
           </p>
           <div
             class="mt-5 plotly-graph-div"
-            style="height: 900px;"
+            style="height: 900px"
             id="linearCoeff"
             data-aos="fade-up"
           ></div>
@@ -1085,21 +1074,21 @@
             <div class="col-lg-12 col-md-12 plots-linear-item filter-shcement">
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapShcementLinear"
               ></div>
             </div>
             <div class="col-lg-12 col-md-12 plots-linear-item filter-cementkit">
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapKitchenLinear"
               ></div>
             </div>
             <div class="col-lg-12 col-md-12 plots-linear-item filter-cementdin">
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapDiningLinear"
               ></div>
             </div>
@@ -1108,14 +1097,14 @@
             >
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapBathLinear"
               ></div>
             </div>
             <div class="col-lg-12 col-md-12 plots-linear-item filter-cementbed">
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapBedLinear"
               ></div>
             </div>
@@ -1436,7 +1425,7 @@
             >
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapShcementTree"
               ></div>
             </div>
@@ -1445,7 +1434,7 @@
             >
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapKitchenTree"
               ></div>
             </div>
@@ -1454,7 +1443,7 @@
             >
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapDiningTree"
               ></div>
             </div>
@@ -1463,7 +1452,7 @@
             >
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapBathTree"
               ></div>
             </div>
@@ -1472,7 +1461,7 @@
             >
               <div
                 class="plotly-graph-div"
-                style="height: 900px;"
+                style="height: 900px"
                 id="shapBedTree"
               ></div>
             </div>
@@ -1695,7 +1684,7 @@
               data-aos="zoom-in"
               data-aos-delay="200"
             >
-              <div class="icon-box iconbox-orange ">
+              <div class="icon-box iconbox-orange">
                 <div class="icon">
                   <svg
                     width="100"
@@ -2115,95 +2104,95 @@
       window.MathJax = {
         tex: {
           inlineMath: [
-            ['$', '$'],
-            ['\\(', '\\)']
-          ]
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
         },
         svg: {
-          fontCache: 'global'
-        }
-      }
+          fontCache: "global",
+        },
+      };
       $(function () {
         var plot = function (id) {
-          window.PLOTLYENV = { BASE_URL: 'https://plotly.com' }
+          window.PLOTLYENV = { BASE_URL: "https://plotly.com" };
 
-          var gd = document.getElementById(id)
-          var resizeDebounce = null
+          var gd = document.getElementById(id);
+          var resizeDebounce = null;
 
-          function resizePlot () {
-            var bb = gd.getBoundingClientRect()
+          function resizePlot() {
+            var bb = gd.getBoundingClientRect();
             Plotly.relayout(gd, {
               width: bb.width,
-              height: bb.height
-            })
+              height: bb.height,
+            });
           }
 
-          window.addEventListener('resize', function () {
+          window.addEventListener("resize", function () {
             if (resizeDebounce) {
-              window.clearTimeout(resizeDebounce)
+              window.clearTimeout(resizeDebounce);
             }
-            resizeDebounce = window.setTimeout(resizePlot, 100)
-          })
+            resizeDebounce = window.setTimeout(resizePlot, 100);
+          });
 
           Plotly.plot(gd, {
             data: window[id].data,
             layout: window[id].layout,
-            frames: window[id].frames
-          })
-        }
-        plot('linearCoeff')
-        plot('shapShcementLinear')
-        plot('shapKitchenLinear')
-        plot('shapDiningLinear')
-        plot('shapBathLinear')
-        plot('shapBedLinear')
-        plot('controlVariance')
-        plot('shapShcementTree')
-        plot('shapKitchenTree')
-        plot('shapDiningTree')
-        plot('shapBathTree')
-        plot('shapBedTree')
-        plot('shcementTree')
-        plot('diningTree')
-        plot('kitchenTree')
-        plot('bathTree')
-        plot('bedTree')
+            frames: window[id].frames,
+          });
+        };
+        plot("linearCoeff");
+        plot("shapShcementLinear");
+        plot("shapKitchenLinear");
+        plot("shapDiningLinear");
+        plot("shapBathLinear");
+        plot("shapBedLinear");
+        plot("controlVariance");
+        plot("shapShcementTree");
+        plot("shapKitchenTree");
+        plot("shapDiningTree");
+        plot("shapBathTree");
+        plot("shapBedTree");
+        plot("shcementTree");
+        plot("diningTree");
+        plot("kitchenTree");
+        plot("bathTree");
+        plot("bedTree");
 
-        $('#portfolio-flters li').on('click', function () {
-          var idPlot = $(this).attr('data')
+        $("#portfolio-flters li").on("click", function () {
+          var idPlot = $(this).attr("data");
           setTimeout(() => {
-            Plotly.purge(document.getElementById(idPlot))
+            Plotly.purge(document.getElementById(idPlot));
             Plotly.plot(document.getElementById(idPlot), {
               data: window[idPlot].data,
               layout: window[idPlot].layout,
-              frames: window[idPlot].frames
-            })
-          }, 50)
-        })
-        window.addEventListener('refreshPlots', function () {
-          $('#portfolio-flters li.filter-active').trigger('click')
-        })
+              frames: window[idPlot].frames,
+            });
+          }, 50);
+        });
+        window.addEventListener("refreshPlots", function () {
+          $("#portfolio-flters li.filter-active").trigger("click");
+        });
 
-        $('.heading-btn').on('click', function () {
-          var arrow = $(this).find('i')
-          var target = $(this).attr('data-target')
-          var accordion = $(target).attr('data-parent')
+        $(".heading-btn").on("click", function () {
+          var arrow = $(this).find("i");
+          var target = $(this).attr("data-target");
+          var accordion = $(target).attr("data-parent");
 
-          if (arrow.hasClass('icofont-rounded-right')) {
-            $(accordion + ' .icofont-rounded-down')
-              .removeClass('icofont-rounded-down')
-              .addClass('icofont-rounded-right')
+          if (arrow.hasClass("icofont-rounded-right")) {
+            $(accordion + " .icofont-rounded-down")
+              .removeClass("icofont-rounded-down")
+              .addClass("icofont-rounded-right");
 
             arrow
-              .removeClass('icofont-rounded-right')
-              .addClass('icofont-rounded-down')
+              .removeClass("icofont-rounded-right")
+              .addClass("icofont-rounded-down");
           } else {
             arrow
-              .addClass('icofont-rounded-right')
-              .removeClass('icofont-rounded-down')
+              .addClass("icofont-rounded-right")
+              .removeClass("icofont-rounded-down");
           }
-        })
-      })
+        });
+      });
     </script>
   </body>
 </html>
