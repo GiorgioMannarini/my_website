@@ -73,18 +73,30 @@
             >
           </li>
           <li>
-            <a href="#first-question"
-              ><i class="bx bx-book-content"></i> <span>Portfolio</span></a
+            <a href="#ourextension"
+              ><i class="bx bx-extension"></i> <span>Our extension</span></a
             >
           </li>
           <li>
-            <a href="#services"
-              ><i class="bx bx-server"></i> <span>Services</span></a
+            <a href="#second-question"
+              ><i class="bx bx-analyse"></i>
+              <span>Paper's result analysis</span></a
             >
           </li>
           <li>
-            <a href="#contact"
-              ><i class="bx bx-envelope"></i> <span>Contact</span></a
+            <a href="#importance-water"
+              ><i class="bx bx-home-heart"></i>
+              <span>An unexpected discovery</span></a
+            >
+          </li>
+          <li>
+            <a href="#conclusions"
+              ><i class="bx bx-detail"></i> <span>Conclusions</span></a
+            >
+          </li>
+          <li>
+            <a href="#links"
+              ><i class="bx bx-link"></i> <span>Useful links</span></a
             >
           </li>
         </ul>
@@ -619,7 +631,7 @@
       <!-- End Paper's results Section -->
 
       <!-- ======= Starting point Section ======= -->
-      <section id="resume" class="resume">
+      <section id="ourextension" class="resume">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Our extension</h2>
@@ -656,11 +668,11 @@
             </div>
           </div>
         </div>
-      </section>
-      <!-- End Resume Section -->
 
-      <!-- First question Section -->
-      <section id="first-question" class="portfolio section-bg">
+        <!-- End Resume Section -->
+
+        <!-- First question Section -->
+
         <div class="container" data-aos="fade-up">
           <div class="section-title">
             <h2>Question 1</h2>
@@ -848,8 +860,8 @@
             part, but nothing too worrying. We will walk you thorugh an example
             with a linear regression model on table 4 as it is the simplest
             model to grasp. For a more complete explanation about SHAP values
-            please refer to the Jupyter Notebook (PUT LINK) that comes with this
-            datastory.
+            please refer to the <a href="#">Jupyter Notebook</a> that comes with
+            this datastory.
           </p>
           <p class="mt-5 text-left">
             <small
@@ -902,8 +914,9 @@
               href="https://papers.nips.cc/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf"
               >invented SHAP values</a
             >. If you find the linked paper too dense and not easy to
-            understand, we provide a more visual explanation in our notebook
-            (LINK), that includes the so called
+            understand, we provide a more visual explanation in
+            <a href="#">our notebook</a>
+            , that includes the so called
             <i>partial dependence plots</i> and other mathematical derivations,
             and that we don't report here for brevity.
           </p>
@@ -1629,9 +1642,14 @@
             questions and conclusions, but if you are interested in a more
             techincal and in depth analysis, please refer to the notebook.
           </p>
-          <h3 class="subtitle text-center mb-5 mt-5" id="trees-results">
-            The importance of water
-          </h3>
+        </div>
+      </section>
+      <!-- End Second question Section -->
+      <section id="importance-water" class="portfolio section-bg">
+        <div class="container" data-aos="fade-up">
+          <div class="section-title">
+            <h2>The importance of water</h2>
+          </div>
           <p class="text-justify mt-3">
             We notice the importance of
             <span class="bg-light text-monospace">S_waterhouse</span> for the
@@ -1778,96 +1796,230 @@
             </div>
           </div>
           <p class="text-justify mt-3">
-            Other than the impact of <span class="bg-light text-monospace">dpisofirme</span>, which is not as significant
-            as before, we notice, as expected, that the age of the child taken
-            into account plays a significant role, especially for the variables
-            directly related to diseases, namely <span class="bg-light text-monospace">S_parcount</span>, <span class="bg-light text-monospace">S_diarrhea</span> and
-            <span class="bg-light text-monospace">S_anemia</span>. In particular, it seems that, for the parasite count,
-            this is positively correlated with the age of the person. This means
-            that the older the child was in 2005, the higher was the count of
+            Other than the impact of
+            <span class="bg-light text-monospace">dpisofirme</span>, which is
+            not as significant as before, we notice, as expected, that the age
+            of the child taken into account plays a significant role, especially
+            for the variables directly related to diseases, namely
+            <span class="bg-light text-monospace">S_parcount</span>,
+            <span class="bg-light text-monospace">S_diarrhea</span> and
+            <span class="bg-light text-monospace">S_anemia</span>. In
+            particular, it seems that, for the parasite count, this is
+            positively correlated with the age of the person. This means that
+            the older the child was in 2005, the higher was the count of
             parasites in its body (on average). For the other two variables we
-            notice a significant <b>negative</b> correlation with the age. This can
-            be considered normal, since some diseases are more related to young
-            children, others to older ones. An important consideration must be
-            made with respect to <span class="bg-light text-monospace">S_waterhouse</span> and <span class="bg-light text-monospace">S_washhands</span>: while for
-            anemia and parasite count it doesn't seem to be so important, for
+            notice a significant <b>negative</b> correlation with the age. This
+            can be considered normal, since some diseases are more related to
+            young children, others to older ones. An important consideration
+            must be made with respect to
+            <span class="bg-light text-monospace">S_waterhouse</span> and
+            <span class="bg-light text-monospace">S_washhands</span>: while for
+            anemia and parasite count they don't seem to be so important, for
             diarrhea it is pretty clear that having water in the house higly
             reduces the risk of this disease. This might be only a coincidence
             (we repeat it: correlation doesn't mean causation), but it surely
             might be a starting point for future studies. <br />
-            Maybe, then, a program
-            similar to Piso Firme could be offered to ensure every mexican has
-            water (and, consequently, a better hygene) in their house. Also,
-            having animals inside seems to be positively correlated with the
-            same disease. We don't notice other significant correlations in the
-            other variables: often the one with the highest SHAP value is a
+            Maybe, then, a program similar to Piso Firme could be offered to
+            ensure every mexican has water (and, consequently, a better hygene)
+            in their house. Also, having animals inside seems to be positively
+            correlated with the same disease. We don't notice other significant
+            correlations in the other variables: often the one with the highest
+            SHAP value is a
             <i>missing</i> one, which is just a dummy variable used to deal with
             null values, as explained in our respective replications.
           </p>
         </div>
       </section>
-      <!-- End Second question Section -->
-
       <!-- ======= Portfolio Section ======= -->
-      <section id="portfolio" class="portfolio section-bg">
+      <section id="conclusions" class="portfolio section-bg">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Portfolio</h2>
-            <p>
-              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-              Quia fugiat sit in iste officiis commodi quidem hic quas.
-            </p>
+            <h2>Conclusions</h2>
           </div>
+          <p class="text-justify">
+            At the end of this journey, there are some conclusions that needs to
+            be made:
+          </p>
+          <div class="row our-questions text-justify mt-4">
+            <div class="col accordion" id="accordionTest3">
+              <ul>
+                <li>
+                  <div
+                    id="headingSeven"
+                    class="heading-btn"
+                    data-toggle="collapse"
+                    data-target="#collapseSeven"
+                    aria-expanded="true"
+                    aria-controls="collapseSeven"
+                  >
+                    <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                      <i class="icofont-rounded-right"></i>
+                      Statal programs make you richer?
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseSeven"
+                    class="collapse ml-1"
+                    aria-labelledby="headingSeven"
+                    data-parent="#accordionTest3"
+                  >
+                    We didn't observe a correlation between Piso Firme and the
+                    average income / assets per capita in 2005, at the time of
+                    the survey, as well as between the participation to the
+                    program and the natality rate. From this perspective, it
+                    could be interesting to conduct a long-term study to assess
+                    the economical and social benefits of these kind of
+                    programs.
+                  </div>
+                </li>
+                <li>
+                  <div
+                    id="headingEight"
+                    class="heading-btn"
+                    data-toggle="collapse"
+                    data-target="#collapseEight"
+                    aria-expanded="true"
+                    aria-controls="collapseEight"
+                  >
+                    <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                      <i class="icofont-rounded-right"></i>
+                      Are the authors' results consistent?
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseEight"
+                    class="collapse ml-1"
+                    aria-labelledby="headingEight"
+                    data-parent="#accordionTest3"
+                  >
+                    For tables 4 and 5 of the paper, the author's results still
+                    hold when we consider more advanced models and methods to
+                    assess the impact of a feature on the decided outcomes. The
+                    same analysis can be conducted on all the other tables, with
+                    little to no effort.
+                  </div>
+                </li>
+                <li>
+                  <div
+                    id="headingNine"
+                    class="heading-btn"
+                    data-toggle="collapse"
+                    data-target="#collapseNine"
+                    aria-expanded="true"
+                    aria-controls="collapseNine"
+                  >
+                    <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                      <i class="icofont-rounded-right"></i>
+                      An example of democratic behaviour
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseNine"
+                    class="collapse ml-1"
+                    aria-labelledby="headingNine"
+                    data-parent="#accordionTest3"
+                  >
+                    We noticed that there are other variables that might have
+                    conditioned people who received the bonus on where to put
+                    the cement in their house. Mexican people seems to be pretty
+                    democratic from this point of view: if there are many rooms
+                    (and thus many bedrooms), they often decided to put cement
+                    in a common room, to be fair with every member of the
+                    family.
+                  </div>
+                </li>
+                <li>
+                  <div
+                    id="headingTen"
+                    class="heading-btn"
+                    data-toggle="collapse"
+                    data-target="#collapseTen"
+                    aria-expanded="true"
+                    aria-controls="collapseTen"
+                  >
+                    <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                      <i class="icofont-rounded-right"></i>
+                      Some Mexican family seems to not have a proper bathroom
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseTen"
+                    class="collapse ml-1"
+                    aria-labelledby="headingTen"
+                    data-parent="#accordionTest3"
+                  >
+                    We noticed a significant impact for the dummy variable
+                    <span class="bg-light text-monospace">S_waterhouse</span>,
+                    which is equal to 1 if the household had continuous access
+                    to water within their house and 0 otherwise, especially when
+                    the outcome was
+                    <span class="bg-light text-monospace">S_cementfloorbat</span
+                    >. This is of course understandable, as we tried to explain,
+                    since it is likely that not having water access is
+                    associated to the lack of a proper bathroom.
+                  </div>
+                </li>
+                <li>
+                  <div
+                    id="headingElev"
+                    class="heading-btn"
+                    data-toggle="collapse"
+                    data-target="#collapseElev"
+                    aria-expanded="true"
+                    aria-controls="collapseElev"
+                  >
+                    <h5 class="pt-2 pb-2 bg-light rounded my-result">
+                      <i class="icofont-rounded-right"></i>
+                      A suggestion for another social program
+                    </h5>
+                  </div>
+                  <div
+                    id="collapseElev"
+                    class="collapse ml-1"
+                    aria-labelledby="headingElev"
+                    data-parent="#accordionTest3"
+                  >
+                    With respect to table 5, we proved that what the authors
+                    claimed in the paper is true (although the effect of Piso
+                    Firme doesn't seem to be as important as for the previous
+                    table, but this was expected, given the nature of the
+                    outcomes). Then we tried to assess the impact of
+                    <span class="bg-light text-monospace">S_waterhouse</span> on
+                    children-related health variables. We noticed a significant
+                    negative correlation with the diarrhea "disease". Having no
+                    access to water in the house (and thus a proper bathroom as
+                    previously inferred) exposes everyone, especially children,
+                    with low immunitary defense, to diseases and infections.
+                    This gives us something to think about: mexican government
+                    had to make a choice about how to spend its money in terms
+                    of social programs. We saw how successful Piso Firme has
+                    been, what would happen with a program of this kind, with
+                    the aim of bringing water to every house?
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <p class="text-justify">
+            To conclude: the authors of "House, Health and Happiness" are
+            definetly right about the impact of Piso Firme on the general well
+            being of mexican people, but for us it has been more interesting to
+            see how many hypotheses, claims and theories can be formulated
+            analysing datasets like the provided ones. We hope you found this
+            journey as fascinating as we did.
+          </p>
         </div>
       </section>
       <!-- End Portfolio Section -->
 
       <!-- ======= Services Section ======= -->
-      <section id="services" class="services">
+      <section id="links" class="services">
         <div class="container" data-aos="fade-up">
           <div class="section-title">
-            <h2>Services</h2>
-            <p>
-              Magnam dolores commodi suscipit. Necessitatibus eius consequatur
-              ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam
-              quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea.
-              Quia fugiat sit in iste officiis commodi quidem hic quas.
-            </p>
+            <h2>Some useful links</h2>
           </div>
 
           <div class="row">
-            <div
-              class="col-lg-4 col-md-6 d-flex align-items-stretch"
-              data-aos="zoom-in"
-              data-aos-delay="100"
-            >
-              <div class="icon-box iconbox-blue">
-                <div class="icon">
-                  <svg
-                    width="100"
-                    height="100"
-                    viewBox="0 0 600 600"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke="none"
-                      stroke-width="0"
-                      fill="#f5f5f5"
-                      d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"
-                    ></path>
-                  </svg>
-                  <i class="bx bxl-dribbble"></i>
-                </div>
-                <h4><a href="">Lorem Ipsum</a></h4>
-                <p>
-                  Voluptatum deleniti atque corrupti quos dolores et quas
-                  molestias excepturi
-                </p>
-              </div>
-            </div>
-
             <div
               class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
               data-aos="zoom-in"
@@ -1890,50 +2042,21 @@
                   </svg>
                   <i class="bx bx-file"></i>
                 </div>
-                <h4><a href="">Sed Perspiciatis</a></h4>
-                <p>
-                  Duis aute irure dolor in reprehenderit in voluptate velit esse
-                  cillum dolore
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0"
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <div class="icon-box iconbox-pink">
-                <div class="icon">
-                  <svg
-                    width="100"
-                    height="100"
-                    viewBox="0 0 600 600"
-                    xmlns="http://www.w3.org/2000/svg"
+                <h4>
+                  <a
+                    href="https://papers.nips.cc/paper/2017/file/8a20a8621978632d76c43dfd28b67767-Paper.pdf" target="blank"
+                    >Housing, Health and Happiness paper</a
                   >
-                    <path
-                      stroke="none"
-                      stroke-width="0"
-                      fill="#f5f5f5"
-                      d="M300,541.5067337569781C382.14930387511276,545.0595476570109,479.8736841581634,548.3450877840088,526.4010558755058,480.5488172755941C571.5218469581645,414.80211281144784,517.5187510058486,332.0715597781072,496.52539010469104,255.14436215662573C477.37192572678356,184.95920475031193,473.57363656557914,105.61284051026155,413.0603344069578,65.22779650032875C343.27470386102294,18.654635553484475,251.2091493199835,5.337323636656869,175.0934190732945,40.62881213300186C97.87086631185822,76.43348514350839,51.98124368387456,156.15599469081315,36.44837278890362,239.84606092416172C21.716077023791087,319.22268207091537,43.775223500013084,401.1760424656574,96.891909868211,461.97329694683043C147.22146801428983,519.5804099606455,223.5754009179313,538.201503339737,300,541.5067337569781"
-                    ></path>
-                  </svg>
-                  <i class="bx bx-tachometer"></i>
-                </div>
-                <h4><a href="">Magni Dolores</a></h4>
-                <p>
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                  qui officia
-                </p>
+                </h4>
+                <p></p>
               </div>
             </div>
-
             <div
-              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+              class="col-lg-4 col-md-6 d-flex align-items-stretch"
               data-aos="zoom-in"
               data-aos-delay="100"
             >
-              <div class="icon-box iconbox-yellow">
+              <div class=" w-100 icon-box iconbox-blue">
                 <div class="icon">
                   <svg
                     width="100"
@@ -1945,25 +2068,21 @@
                       stroke="none"
                       stroke-width="0"
                       fill="#f5f5f5"
-                      d="M300,503.46388370962813C374.79870501325706,506.71871716319447,464.8034551963731,527.1746412648533,510.4981551193396,467.86667711651364C555.9287308511215,408.9015244558933,512.6030010748507,327.5744911775523,490.211057578863,256.5855673507754C471.097692560561,195.9906835881958,447.69079081568157,138.11976852964426,395.19560036434837,102.3242989838813C329.3053358748298,57.3949838291264,248.02791733380457,8.279543830951368,175.87071277845988,42.242879143198664C103.41431057327972,76.34704239035025,93.79494320519305,170.9812938413882,81.28167332365135,250.07896920659033C70.17666984294237,320.27484674793965,64.84698225790005,396.69656628748305,111.28512138212992,450.4950937839243C156.20124167950087,502.5303643271138,231.32542653798444,500.4755392045468,300,503.46388370962813"
+                      d="M300,521.0016835830174C376.1290562159157,517.8887921683347,466.0731472004068,529.7835943286574,510.70327084640275,468.03025145048787C554.3714126377745,407.6079735673963,508.03601936045806,328.9844924480964,491.2728898941984,256.3432110539036C474.5976632858925,184.082847569629,479.9380746630129,96.60480741107993,416.23090153303,58.64404602377083C348.86323505073057,18.502131276798302,261.93793281208167,40.57373210992963,193.5410806939664,78.93577620505333C130.42746243093433,114.334589627462,98.30271207620316,179.96522072025542,76.75703585869454,249.04625023123273C51.97151888228291,328.5150500222984,13.704378332031375,421.85034740162234,66.52175969318436,486.19268352777647C119.04800174914682,550.1803526380478,217.28368757567262,524.383925680826,300,521.0016835830174"
                     ></path>
                   </svg>
-                  <i class="bx bx-layer"></i>
+                  <i class="bx bx-code"></i>
                 </div>
-                <h4><a href="">Nemo Enim</a></h4>
-                <p>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis
-                </p>
+                <h4><a href="" target="blank">Our Jupyter Notebook</a></h4>
+                <p></p>
               </div>
             </div>
-
             <div
-              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
+              class="col-lg-4 col-md-6 d-flex align-items-stretch"
               data-aos="zoom-in"
-              data-aos-delay="200"
+              data-aos-delay="100"
             >
-              <div class="icon-box iconbox-red">
+              <div class="icon-box iconbox-pink">
                 <div class="icon">
                   <svg
                     width="100"
@@ -1978,262 +2097,30 @@
                       d="M300,532.3542879108572C369.38199826031484,532.3153073249985,429.10787420159085,491.63046689027357,474.5244479745417,439.17860296908856C522.8885846962883,383.3225815378663,569.1668002868075,314.3205725914397,550.7432151929288,242.7694973846089C532.6665558377875,172.5657663291529,456.2379748765914,142.6223662098291,390.3689995646985,112.34683881706744C326.66090330228417,83.06452184765237,258.84405631176094,53.51806209861945,193.32584062364296,78.48882559362697C121.61183558270385,105.82097193414197,62.805066853699245,167.19869350419734,48.57481801355237,242.6138429142374C34.843463184063346,315.3850353017275,76.69343916112496,383.4422959591041,125.22947124332185,439.3748458443577C170.7312796277747,491.8107796887764,230.57421082200815,532.3932930995766,300,532.3542879108572"
                     ></path>
                   </svg>
-                  <i class="bx bx-slideshow"></i>
+                  <i class="bx bx-data"></i>
                 </div>
-                <h4><a href="">Dele Cardo</a></h4>
-                <p>
-                  Quis consequatur saepe eligendi voluptatem consequatur dolor
-                  consequuntur
-                </p>
-              </div>
-            </div>
-
-            <div
-              class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4"
-              data-aos="zoom-in"
-              data-aos-delay="300"
-            >
-              <div class="icon-box iconbox-teal">
-                <div class="icon">
-                  <svg
-                    width="100"
-                    height="100"
-                    viewBox="0 0 600 600"
-                    xmlns="http://www.w3.org/2000/svg"
+                <h4>
+                  <a href="https://dlab.epfl.ch/teaching/fall2020/cs401/" target="blank"
+                    >ADA Course webpage</a
                   >
-                    <path
-                      stroke="none"
-                      stroke-width="0"
-                      fill="#f5f5f5"
-                      d="M300,566.797414625762C385.7384707136149,576.1784315230908,478.7894351017131,552.8928747891023,531.9192734346935,484.94944893311C584.6109503024035,417.5663521118492,582.489472248146,322.67544863468447,553.9536738515405,242.03673114598146C529.1557734026468,171.96086150256528,465.24506316201064,127.66468636344209,395.9583748389544,100.7403814666027C334.2173773831606,76.7482773500951,269.4350130405921,84.62216499799875,207.1952322260088,107.2889140133804C132.92018162631612,134.33871894543012,41.79353780512637,160.00259165414826,22.644507872594943,236.69541883565114C3.319112789854554,314.0945973066697,72.72355303640163,379.243833228382,124.04198916343866,440.3218312028393C172.9286146004772,498.5055451809895,224.45579914871206,558.5317968840102,300,566.797414625762"
-                    ></path>
-                  </svg>
-                  <i class="bx bx-arch"></i>
-                </div>
-                <h4><a href="">Divera Don</a></h4>
-                <p>
-                  Modi nostrum vel laborum. Porro fugit error sit minus sapiente
-                  sit aspernatur
-                </p>
+                </h4>
+                <p></p>
               </div>
             </div>
           </div>
         </div>
       </section>
       <!-- End Services Section -->
-
-      <!-- ======= Testimonials Section ======= -->
-      <section id="testimonials" class="testimonials section-bg">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Testimonials</h2>
-          </div>
-
-          <div
-            class="owl-carousel testimonials-carousel"
-            data-aos="zoom-in"
-            data-aos-delay="100"
-          >
-            <div class="testimonial-item"></div>
-
-            <div class="testimonial-item">
-              <img
-                src="assets/img/testimonials/testimonials-2.jpg"
-                class="testimonial-img"
-                alt=""
-              />
-              <h3>Sara Wilsson</h3>
-              <h4>Designer</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Export tempor illum tamen malis malis eram quae irure esse
-                labore quem cillum quid cillum eram malis quorum velit fore eram
-                velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-
-            <div class="testimonial-item">
-              <img
-                src="assets/img/testimonials/testimonials-3.jpg"
-                class="testimonial-img"
-                alt=""
-              />
-              <h3>Jena Karlis</h3>
-              <h4>Store Owner</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Enim nisi quem export duis labore cillum quae magna enim sint
-                quorum nulla quem veniam duis minim tempor labore quem eram duis
-                noster aute amet eram fore quis sint minim.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-
-            <div class="testimonial-item">
-              <img
-                src="assets/img/testimonials/testimonials-4.jpg"
-                class="testimonial-img"
-                alt=""
-              />
-              <h3>Matt Brandon</h3>
-              <h4>Freelancer</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                multos export minim fugiat minim velit minim dolor enim duis
-                veniam ipsum anim magna sunt elit fore quem dolore labore illum
-                veniam.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-
-            <div class="testimonial-item">
-              <img
-                src="assets/img/testimonials/testimonials-5.jpg"
-                class="testimonial-img"
-                alt=""
-              />
-              <h3>John Larson</h3>
-              <h4>Entrepreneur</h4>
-              <p>
-                <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                Quis quorum aliqua sint quem legam fore sunt eram irure aliqua
-                veniam tempor noster veniam enim culpa labore duis sunt culpa
-                nulla illum cillum fugiat legam esse veniam culpa fore nisi
-                cillum quid.
-                <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Testimonials Section -->
-
-      <!-- ======= Contact Section ======= -->
-      <section id="contact" class="contact">
-        <div class="container" data-aos="fade-up">
-          <div class="section-title">
-            <h2>Contact</h2>
-          </div>
-
-          <div class="row mt-1">
-            <div class="col-lg-4">
-              <div class="info">
-                <div class="address">
-                  <i class="icofont-google-map"></i>
-                  <h4>Location:</h4>
-                  <p>A108 Adam Street, New York, NY 535022</p>
-                </div>
-
-                <div class="email">
-                  <i class="icofont-envelope"></i>
-                  <h4>Email:</h4>
-                  <p>info@example.com</p>
-                </div>
-
-                <div class="phone">
-                  <i class="icofont-phone"></i>
-                  <h4>Call:</h4>
-                  <p>+1 5589 55488 55s</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-8 mt-5 mt-lg-0">
-              <form
-                action="forms/contact.php"
-                method="post"
-                role="form"
-                class="php-email-form"
-              >
-                <div class="form-row">
-                  <div class="col-md-6 form-group">
-                    <input
-                      type="text"
-                      name="name"
-                      class="form-control"
-                      id="name"
-                      placeholder="Your Name"
-                      data-rule="minlen:4"
-                      data-msg="Please enter at least 4 chars"
-                    />
-                    <div class="validate"></div>
-                  </div>
-                  <div class="col-md-6 form-group">
-                    <input
-                      type="email"
-                      class="form-control"
-                      name="email"
-                      id="email"
-                      placeholder="Your Email"
-                      data-rule="email"
-                      data-msg="Please enter a valid email"
-                    />
-                    <div class="validate"></div>
-                  </div>
-                </div>
-                <div class="form-group">
-                  <input
-                    type="text"
-                    class="form-control"
-                    name="subject"
-                    id="subject"
-                    placeholder="Subject"
-                    data-rule="minlen:4"
-                    data-msg="Please enter at least 8 chars of subject"
-                  />
-                  <div class="validate"></div>
-                </div>
-                <div class="form-group">
-                  <textarea
-                    class="form-control"
-                    name="message"
-                    rows="5"
-                    data-rule="required"
-                    data-msg="Please write something for us"
-                    placeholder="Message"
-                  ></textarea>
-                  <div class="validate"></div>
-                </div>
-                <div class="mb-3">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">
-                    Your message has been sent. Thank you!
-                  </div>
-                </div>
-                <div class="text-center">
-                  <button type="submit">Send Message</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Contact Section -->
     </main>
     <!-- End #main -->
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
       <div class="container">
-        <h3>Brandon Johnson</h3>
+        <h3>American Dental Association</h3>
         <p>
-          Et aut eum quis fuga eos sunt ipsa nihil. Labore corporis magni
-          eligendi fuga maxime saepe commodi placeat.
+          Amine Chaouachi, Giorgio Mannarini, Francesco Posa.
         </p>
-        <div class="social-links">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>
-        <div class="copyright">
-          &copy; Copyright <strong><span>MyResume</span></strong
-          >. All Rights Reserved
-        </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
