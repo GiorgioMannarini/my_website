@@ -20651,5 +20651,10 @@ body {
 .form-control.is-invalid {
   background-position: right calc(0.375em + 0.1875rem) center;
 }
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+}
 
 /*# sourceMappingURL=styles.css.map*/
