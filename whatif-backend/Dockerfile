@@ -1,7 +1,7 @@
 FROM continuumio/miniconda3
 
 COPY requirements.yml .
-RUN conda env create -f requirements.yml
+RUN conda env create -f requirements.yml > /logs/log.txt
 
 COPY . .
 

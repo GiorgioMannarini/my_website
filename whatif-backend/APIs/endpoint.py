@@ -6,7 +6,7 @@ from flask_cors import CORS
 from model.country_data import CountryData
 
 app = flask.Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "http://localhost:4200"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 
 @app.route('/api/v1/<country>/predict', methods=['POST'])
