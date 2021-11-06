@@ -33,6 +33,16 @@ services:
       - /etc/ssl/:/etc/ssl/
     networks:
       - app-network
+  
+  whatif:
+    build:
+      context: ./whatif-backend
+      dockerfile: Dockerfile
+    container_name: whatif-backend
+    restart: unless-stopped
+    tty: true
+    networks:
+      - app-network
 
 #Docker Networks
 networks:
